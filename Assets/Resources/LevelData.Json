@@ -1,0 +1,74 @@
+{
+  "data": [
+    {
+      "key": 1,
+      "value": {
+        "level": 1,
+        "totalExp": 100
+      }
+    },
+    {
+      "key": 2,
+      "value": {
+        "level": 2,
+        "totalExp": 200
+      }
+    },
+    {
+      "key": 3,
+      "value": {
+        "level": 3,
+        "totalExp": 300
+      }
+    },
+    {
+      "key": 4,
+      "value": {
+        "level": 4,
+        "totalExp": 400
+      }
+    },
+    {
+      "key": 5,
+      "value": {
+        "level": 5,
+        "totalExp": 500
+      }
+    },
+    {
+      "key": 6,
+      "value": {
+        "level": 6,
+        "totalExp": 600
+      }
+    },
+    {
+      "key": 7,
+      "value": {
+        "level":7,
+        "totalExp":700
+      }
+    },
+    {
+      "key": 8,
+      "value": {
+        "level": 8,
+        "totalExp": 800
+      }
+    },
+    {
+      "key": 9,
+      "value": {
+        "level": 9,
+        "totalExp": 900
+      }
+    },
+    {
+      "key": 10,
+      "value": {
+        "level": 10,
+        "totalExp": 0
+      }
+    }
+  ]
+}
