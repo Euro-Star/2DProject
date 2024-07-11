@@ -10,17 +10,20 @@ public class HealthComponent : MonoBehaviour
     [SerializeField]
     GameObject textDamagePrefab;
 
-    private int maxHealth;
-    private int currnetHealth;
+    private int maxHp;
+    private int currnetHp;
 
     public event EventHandler DeathEvent;
+    public event EventHandler HpChangeEvent;
 
-    public int GetMaxHealth() { return maxHealth; }
-    public int GetHealth() { return currnetHealth; }
+    public int GetMaxHealth() { return maxHp; }
+    public int GetHealth() { return currnetHp; }
     public void InitHealth(int Hp)
     {
-        maxHealth = Hp;
-        currnetHealth = Hp;
+        maxHp = Hp;
+        currnetHp = Hp;
+
+        HpChangeEvent?.Invoke(this, EventArgs.Empty);
     }
 
     public void HitDamage(int Hp)
@@ -31,11 +34,41 @@ public class HealthComponent : MonoBehaviour
         uiObj.transform.position = transform.position;
         damageUI.SetTextDamage(Hp);
 
-        currnetHealth -= Hp;
+        currnetHp -= Hp;
 
-        if (currnetHealth <= 0)
+        if (currnetHp <= 0)
         {
+            currnetHp = 0;
             DeathEvent?.Invoke(this, EventArgs.Empty);
         }
+
+        HpChangeEvent?.Invoke(this, EventArgs.Empty);
+    }
+
+    public void Heal(int heal)
+    {
+        currnetHp += heal;
+
+        if(currnetHp > maxHp)
+        {
+            currnetHp = maxHp;
+        }
+
+        HpChangeEvent?.Invoke(this, EventArgs.Empty);
+    }
+
+    public void MaxHeal()
+    {
+        currnetHp = maxHp;
+
+        HpChangeEvent?.Invoke(this, EventArgs.Empty);
+    }
+
+    public void IncreaseHp()
+    {
+        maxHp += 10;
+        currnetHp += 10;
+
+        HpChangeEvent?.Invoke(this, EventArgs.Empty);
     }
 }

@@ -17,6 +17,11 @@ public enum EnemyStatus
     KnockBack
 }
 
+public enum GameUI
+{
+    StatUI = 0
+}
+
 
 
 
