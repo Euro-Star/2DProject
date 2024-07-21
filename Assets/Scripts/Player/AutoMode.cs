@@ -31,7 +31,7 @@ public class AutoMode : MonoBehaviour
     {
         speed = player.GetSpeed();
         poolManager = PoolManager.inst;
-        skillLen = SkillManager.instance.SkillLength();
+        skillLen = SkillManager.inst.SkillLength();
 
         bAutoMode = true;
     }

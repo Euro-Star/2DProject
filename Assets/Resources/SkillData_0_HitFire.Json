@@ -1,0 +1,70 @@
+{
+  "data": [
+    {
+      "key": 1,
+      "value": {
+        "skillName": "HitFire",
+        "damageOverTime": 0,
+        "destroyTime": 0.4,
+        "delay": 0.1,
+        "coolTime": 5,
+        "damageRatio": 5,
+        "skillExplane": "공격력의 500%의 데미지를 1회 줍니다.",
+        "needMoney": 100
+        
+      }
+    },
+    {
+      "key": 2,
+      "value": {
+        "skillName": "HitFire",
+        "damageOverTime": 0,
+        "destroyTime": 0.4,
+        "delay": 0.1,
+        "coolTime": 5,
+        "damageRatio": 7,
+        "skillExplane": "공격력의 700%의 데미지를 1회 줍니다.",
+        "needMoney": 200
+      }
+    },
+    {
+      "key": 3,
+      "value": {
+        "skillName": "HitFire",
+        "damageOverTime": 0,
+        "destroyTime": 0.4,
+        "delay": 0.1,
+        "coolTime": 5,
+        "damageRatio": 9,
+        "skillExplane": "공격력의 900%의 데미지를 1회 줍니다.",
+        "needMoney": 300
+      }
+    },
+    {
+      "key": 4,
+      "value": {
+        "skillName": "HitFire",
+        "damageOverTime": 0,
+        "destroyTime": 0.4,
+        "delay": 0.1,
+        "coolTime": 5,
+        "damageRatio": 12,
+        "skillExplane": "공격력의 1200%의 데미지를 1회 줍니다.",
+        "needMoney": 400
+      }
+    },
+    {
+      "key": 5,
+      "value": {
+        "skillName": "HitFire",
+        "damageOverTime": 0,
+        "destroyTime": 0.4,
+        "delay": 0.1,
+        "coolTime": 5,
+        "damageRatio": 15,
+        "skillExplane": "공격력의 1500%의 데미지를 1회 줍니다.",
+        "needMoney": 0
+      }
+    }
+  ]
+}

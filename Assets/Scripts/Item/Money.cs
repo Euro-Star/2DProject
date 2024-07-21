@@ -14,7 +14,7 @@ public class Money : MonoBehaviour
 
     public void SetMoney()
     {
-        money = Random.Range(1, 10);
+        money = Random.Range(10, 50);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

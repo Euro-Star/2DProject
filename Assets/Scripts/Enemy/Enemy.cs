@@ -19,7 +19,7 @@ public class Enemy : MonoBehaviour
     private HealthComponent healthComponent;
     private ItemDropComponent itemDropComponent;
 
-    private int exp = 8;
+    private int exp = 50;
     private int atk = 1;
 
     private Vector2 dirVec;

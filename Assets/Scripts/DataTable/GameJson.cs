@@ -3,16 +3,28 @@ using System;
 [Serializable]
 public class SkillData
 {
-    public int skillCode;
     public string skillName;
-    public int skillLevel;
     public float damageOverTime;
     public float destroyTime;
     public float delay;
     public float coolTime;
     public float damageRatio;
-    public int numFloating;
+    public string skillExplane;
+    public int needMoney;
 }
+
+//public class SkillData
+//{
+//    public int skillCode;
+//    public string skillName;
+//    public int skillLevel;
+//    public float damageOverTime;
+//    public float destroyTime;
+//    public float delay;
+//    public float coolTime;
+//    public float damageRatio;
+//    public int numFloating;
+//}
 
 [Serializable]
 public class PlayerData
@@ -22,6 +34,7 @@ public class PlayerData
     public int level;
     public int exp;
     public int money;
+    public int[] skillLevel;
 }
 
 [Serializable]

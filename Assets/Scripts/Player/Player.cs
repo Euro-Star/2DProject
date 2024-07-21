@@ -94,6 +94,7 @@ public class Player : MonoBehaviour
         abilityComponent.InitPlayerData(playerData);
         healthComponent.InitHealth(playerData.hp);
         inventory.InitInventory(playerData);
+        SkillManager.inst.InitSkillLevel(playerData.skillLevel);
     }
 
     public void SavePlayerData()

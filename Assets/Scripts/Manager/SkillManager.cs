@@ -2,22 +2,43 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using GameUtils;
+using Unity.VisualScripting;
 
 public class SkillManager : MonoBehaviour
 {
     [SerializeField]
     private GameObject[] skillPrefabs;
 
-    public static SkillManager instance;
+    private static SkillManager instance;
+    public static SkillManager inst { get { return instance; } }
 
-    private SkillData[] skillData;
+    [Tooltip("스킬레벨에 대한 정보 저장")]
+    private List<Dictionary<int, SkillData>> skillData;
+    private int[] skillLevel;
 
 
     private void Awake()
     {
         instance = this;
-        skillData = Utils.JsonDataArrayParse<SkillData>("SkillData");
-        Debug.Log(skillData[0].skillName);
+        skillData = new List<Dictionary<int, SkillData>>();
+
+        for(int i = 0; i< skillPrefabs.Length; i++) 
+        {
+            skillData.Add(Utils.JsonToDictionary<int, SkillData>(SkillIndexToName(i)));
+        }
+    }
+
+    private string SkillIndexToName(int index)
+    {
+        switch(index) 
+        {
+            case 0:
+                return "SkillData_0_HitFire";
+            case 1:
+                return "SkillData_1_FireWall";
+            default:
+                return null;
+        }
     }
 
     public SkillBase GetSkill(int index)
@@ -32,13 +53,23 @@ public class SkillManager : MonoBehaviour
 
     public SkillData GetSkillData(int index)
     {
-        return skillData[index];
+        return skillData[index][skillLevel[index]];
     }
 
-    //public void AddSkillInfo(SkillInfo skillInfo)
-    //{
-    //    skillInfoList.Add(skillInfo);
-    //}
+    public int GetSkillLevel(int skillCode)
+    {
+        return skillLevel[skillCode];
+    }
+
+    public void SkillLevelUp(int skillCode)
+    {
+        ++skillLevel[skillCode]; 
+    }
+
+    public void InitSkillLevel(int[] skillLevel)
+    {
+        this.skillLevel = skillLevel;
+    }
 
     public int SkillLength()
     {

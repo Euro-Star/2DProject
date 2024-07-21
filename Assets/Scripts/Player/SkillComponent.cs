@@ -21,7 +21,7 @@ public class SkillComponent : MonoBehaviour
 
     private void Start()
     {
-        skillManager = SkillManager.instance;
+        skillManager = SkillManager.inst;
         abilityComponent = Player.player.abilityComponent;
     }
 
@@ -50,7 +50,7 @@ public class SkillComponent : MonoBehaviour
             skill.UseSkill(Player.player.targetPos, abilityComponent.GetAtk());
             bAvailable[index] = true;
 
-            skillCoolTimes[index] = SkillManager.instance.GetSkillData(useSkillIndex[index]).coolTime;
+            skillCoolTimes[index] = SkillManager.inst.GetSkillData(useSkillIndex[index]).coolTime;
             StartCoroutine(CoolTime(index));
         }
         else

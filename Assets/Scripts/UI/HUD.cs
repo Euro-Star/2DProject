@@ -13,6 +13,7 @@ public class HUD : UIBase
 
     private Button[] buttons_Skill;
     private Button button_Status;
+    private Button button_SkillUI;
     private TextMeshProUGUI[] texts_Cooltime;
     private TextMeshProUGUI text_Money;
     private TextMeshProUGUI text_Level;
@@ -31,7 +32,8 @@ public class HUD : UIBase
     {
         Button_Skill_0,
         Button_Skill_1,
-        Button_Status
+        Button_Status,
+        Button_SkillUI,
     }
 
     enum Texts
@@ -67,6 +69,7 @@ public class HUD : UIBase
         buttons_Skill[0] = Get<Button>((int)Buttons.Button_Skill_0);
         buttons_Skill[1] = Get<Button>((int)Buttons.Button_Skill_1);
         button_Status = Get<Button>((int)Buttons.Button_Status);
+        button_SkillUI = Get<Button>((int)Buttons.Button_SkillUI);
 
         texts_Cooltime[0] = Get<TextMeshProUGUI>((int)Texts.Text_CoolTime_0);
         texts_Cooltime[1] = Get<TextMeshProUGUI>((int)Texts.Text_CoolTime_1);
@@ -108,6 +111,7 @@ public class HUD : UIBase
         }
 
         button_Status.onClick.AddListener(OnClicked_Status);
+        button_SkillUI.onClick.AddListener(OnClicked_SkillUI);
     }
 
 
@@ -119,6 +123,11 @@ public class HUD : UIBase
     private void OnClicked_Status()
     {
         uIManager.UIController(GameUI.StatUI, true);
+    }
+
+    private void OnClicked_SkillUI()
+    {
+        uIManager.UIController(GameUI.SkillUI, true);
     }
 
     private void UpdateMoneyText(object sender, EventArgs eventArgs)

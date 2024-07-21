@@ -6,12 +6,10 @@ using GameUtils;
 
 public class HitFire : SkillBase
 {
-    int SkillCode = 0;
-
     protected override void Awake()
     {
         base.Awake();
-        skillData = SkillManager.instance.GetSkillData(SkillCode);
+        skillCode = 0;
     }
 
     protected override void OnEnable()
@@ -30,7 +28,7 @@ public class HitFire : SkillBase
         {
             Enemy enemy = collision.GetComponent<Enemy>();
 
-            enemy.Attacked((int)Math.Floor(playerDamage * skillData.damageRatio));
+            enemy.Attacked((int)Math.Floor(playerDamage * SkillManager.inst.GetSkillData(skillCode).damageRatio));
             enemy.KnockBack();
         }
     }  

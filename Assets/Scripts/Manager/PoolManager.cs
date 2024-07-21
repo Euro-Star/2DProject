@@ -92,13 +92,13 @@ public class PoolManager : MonoBehaviour
     public void SkillSpawn()
     {
         // 스킬 오브젝트 스폰
-        for (int i = 0; i < SkillManager.instance.SkillLength(); i++)
+        for (int i = 0; i < SkillManager.inst.SkillLength(); i++)
         {
             List<GameObject> list = new List<GameObject>();
 
             for (int j = 0; j < 3; j++)
             {
-                gameObj = Instantiate(SkillManager.instance.GetSkillPrefab(i), defaultSpawnPosition);
+                gameObj = Instantiate(SkillManager.inst.GetSkillPrefab(i), defaultSpawnPosition);
                 list.Add(gameObj);
                 gameObj.SetActive(false);
             }

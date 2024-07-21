@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class SkillBase : MonoBehaviour
 {
-    protected SkillData skillData;
     protected Collider2D collider;
+    protected int skillCode = 123456;
     protected int playerDamage;
 
     protected virtual void Awake()
@@ -25,13 +25,13 @@ public class SkillBase : MonoBehaviour
 
     protected IEnumerator Delay()
     {
-        yield return new WaitForSeconds(skillData.delay);
+        yield return new WaitForSeconds(SkillManager.inst.GetSkillData(skillCode).delay);
         collider.enabled = true;
     }
 
     protected IEnumerator DestroySkill()
     {
-        yield return new WaitForSeconds(skillData.destroyTime);
+        yield return new WaitForSeconds(SkillManager.inst.GetSkillData(skillCode).destroyTime);
         transform.gameObject.SetActive(false);
     }
 

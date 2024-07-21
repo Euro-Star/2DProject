@@ -84,7 +84,7 @@ public class StatusUI : UIBase
     private void UpdateText()
     {
         text_Atk.text = abilityComponent.GetAtk().ToString();
-        text_Hp.text = abilityComponent.GetHp().ToString();
+        text_Hp.text = abilityComponent.GetMaxHp().ToString();
         text_StatPoint.text = abilityComponent.GetStatPoint().ToString();
     }
 

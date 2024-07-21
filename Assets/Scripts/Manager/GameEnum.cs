@@ -19,7 +19,8 @@ public enum EnemyStatus
 
 public enum GameUI
 {
-    StatUI = 0
+    StatUI = 0,
+    SkillUI,
 }
 
 

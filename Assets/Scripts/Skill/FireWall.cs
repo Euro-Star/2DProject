@@ -6,13 +6,12 @@ using GameUtils;
 
 public class FireWall : SkillBase
 {
-    int SkillCode = 1;
-    float CurrentTime = 0f;
+    float currentTime = 0f;
 
     protected override void Awake()
     {
         base.Awake();
-        skillData = SkillManager.instance.GetSkillData(SkillCode);
+        skillCode = 1;
     }
 
     protected override void OnEnable()
@@ -27,19 +26,19 @@ public class FireWall : SkillBase
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        CurrentTime += Time.deltaTime;
+        currentTime += Time.deltaTime;
 
-        if(CurrentTime >= skillData.damageOverTime)
+        if(currentTime >= SkillManager.inst.GetSkillData(skillCode).damageOverTime)
         {
             if (Utils.StringToEnum<GameTag>(collision.tag) == GameTag.Enemy)
             {
                 Enemy enemy = collision.GetComponent<Enemy>();
 
-                enemy.Attacked((int)Math.Floor(playerDamage * skillData.damageRatio));
+                enemy.Attacked((int)Math.Floor(playerDamage * SkillManager.inst.GetSkillData(skillCode).damageRatio));
                 enemy.KnockBack();
             }
 
-            CurrentTime = 0f;
+            currentTime = 0f;
         }   
     }
 }
