@@ -16,8 +16,8 @@ public class HealthComponent : MonoBehaviour
     public event EventHandler DeathEvent;
     public event EventHandler HpChangeEvent;
 
-    public int GetMaxHealth() { return maxHp; }
-    public int GetHealth() { return currnetHp; }
+    public int GetMaxHp() { return maxHp; }
+    public int GetHp() { return currnetHp; }
     public void InitHealth(int Hp)
     {
         maxHp = Hp;

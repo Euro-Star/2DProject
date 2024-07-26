@@ -14,7 +14,6 @@ public class SkillUIEntry : UIBase
     private TextMeshProUGUI text_NeedMoney;
 
     private int skillCode;
-    private SkillManager skillManager;
     private int Test_SkillLevelMax = 5;
 
     enum Images
@@ -51,14 +50,6 @@ public class SkillUIEntry : UIBase
         button_SkillLevelUP = Get<Button>((int)Buttons.Button_SkillLevelUp);
     }
 
-    private void OnEnable()
-    {
-        if(skillManager == null)
-        {
-            skillManager = SkillManager.inst;
-        }
-    }
-
     private void Start()
     {
         button_SkillLevelUP.onClick.AddListener(OnClicked_SkillLevelUp);
@@ -66,10 +57,10 @@ public class SkillUIEntry : UIBase
 
     private void OnClicked_SkillLevelUp()
     {
-        if(skillManager.GetSkillData(skillCode).needMoney <= Player.player.inventory.GetMoney())
+        if(SkillManager.inst.GetSkillData(skillCode).needMoney <= Player.player.inventory.GetMoney())
         {
-            Player.player.inventory.UseMoney(skillManager.GetSkillData(skillCode).needMoney);
-            skillManager.SkillLevelUp(skillCode);
+            Player.player.inventory.UseMoney(SkillManager.inst.GetSkillData(skillCode).needMoney);
+            SkillManager.inst.SkillLevelUp(skillCode);
             UpdateText(skillCode);
         }
     }
@@ -83,18 +74,18 @@ public class SkillUIEntry : UIBase
 
     private void UpdateText(int skillCode)
     {
-        text_SkillName.text = skillManager.GetSkillData(skillCode).skillName;
-        text_SkillExplane.text = skillManager.GetSkillData(skillCode).skillExplane;
-        text_NeedMoney.text = skillManager.GetSkillData(skillCode).needMoney.ToString();
+        text_SkillName.text = SkillManager.inst.GetSkillData(skillCode).skillName;
+        text_SkillExplane.text = SkillManager.inst.GetSkillData(skillCode).skillExplane;
+        text_NeedMoney.text = SkillManager.inst.GetSkillData(skillCode).needMoney.ToString();
 
-        if (skillManager.GetSkillLevel(skillCode) == Test_SkillLevelMax)
+        if (SkillManager.inst.GetSkillLevel(skillCode) == Test_SkillLevelMax)
         {
             text_SkillLevel.text = "Level : Max";
             button_SkillLevelUP.interactable = false;
         }
         else
         {
-            text_SkillLevel.text = "Level :" + skillManager.GetSkillLevel(skillCode).ToString();
+            text_SkillLevel.text = "Level :" + SkillManager.inst.GetSkillLevel(skillCode).ToString();
         }
     }
 }

@@ -1,0 +1,79 @@
+{
+  "data": [
+    {
+      "key": 1,
+      "value": {
+        "skillName": "SpeedUp",
+        "damageOverTime": 0,
+        "destroyTime": 10,
+        "delay": 0,
+        "coolTime": 30,
+        "skillValue": 2,
+        "amountOfHeal": 0,
+        "skillExplane": "기본 공격의 속도를 10초동안 2배가 됩니다.",
+        "needMoney": 100,
+        "skillType": "Buff"
+      }
+    },
+    {
+      "key": 2,
+      "value": {
+        "skillName": "SpeedUp",
+        "damageOverTime": 0,
+        "destroyTime": 12,
+        "delay": 0,
+        "coolTime": 30,
+        "skillValue": 2,
+        "amountOfHeal": 0,
+        "skillExplane": "기본 공격의 속도를 12초동안 2배가 됩니다.",
+        "needMoney": 200,
+        "skillType": "Buff"
+      }
+    },
+    {
+      "key": 3,
+      "value": {
+        "skillName": "SpeedUp",
+        "damageOverTime": 0,
+        "destroyTime": 14,
+        "delay": 0,
+        "coolTime": 30,
+        "skillValue": 2.5,
+        "amountOfHeal": 0,
+        "skillExplane": "기본 공격의 속도를 14초동안 2.5배가 됩니다.",
+        "needMoney": 300,
+        "skillType": "Buff"
+      }
+    },
+    {
+      "key": 4,
+      "value": {
+        "skillName": "SpeedUp",
+        "damageOverTime": 0,
+        "destroyTime": 16,
+        "delay": 0,
+        "coolTime": 30,
+        "skillValue": 2.5,
+        "amountOfHeal": 0,
+        "skillExplane": "기본 공격의 속도를 16초동안 2.5배가 됩니다.",
+        "needMoney": 400,
+        "skillType": "Buff"
+      }
+    },
+    {
+      "key": 5,
+      "value": {
+        "skillName": "SpeedUp",
+        "damageOverTime": 0,
+        "destroyTime": 18,
+        "delay": 0,
+        "coolTime": 30,
+        "skillValue": 3,
+        "amountOfHeal": 0,
+        "skillExplane": "기본 공격의 속도를 18초동안 3배가 됩니다.",
+        "needMoney": 0,
+        "skillType": "Buff"
+      }
+    }
+  ]
+}

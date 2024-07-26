@@ -6,15 +6,12 @@ using GameUtils;
 
 public class LockOn : MonoBehaviour
 {
-    public static LockOn inst;
-
     private List<GameObject> overlapEnemy;
     private Rigidbody2D playerRigid;
     private float targetOffset = 1.2f;
 
     private void Awake()
     {
-        inst = this;
         overlapEnemy = new List<GameObject>();
     }
     private void Start()

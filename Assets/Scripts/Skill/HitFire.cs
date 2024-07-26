@@ -9,7 +9,7 @@ public class HitFire : SkillBase
     protected override void Awake()
     {
         base.Awake();
-        skillCode = 0;
+        skillCode = (int)SkillEnum.FireWall;
     }
 
     protected override void OnEnable()
@@ -28,7 +28,7 @@ public class HitFire : SkillBase
         {
             Enemy enemy = collision.GetComponent<Enemy>();
 
-            enemy.Attacked((int)Math.Floor(playerDamage * SkillManager.inst.GetSkillData(skillCode).damageRatio));
+            enemy.Attacked((int)Math.Floor(playerDamage * SkillManager.inst.GetSkillData(skillCode).skillValue));
             enemy.KnockBack();
         }
     }  

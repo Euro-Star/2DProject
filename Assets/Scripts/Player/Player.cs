@@ -8,7 +8,8 @@ using GameUtils;
 
 public class Player : MonoBehaviour
 {
-    public static Player player;
+    public static Player instance;
+    public static Player player { get { return instance; } }
     public Vector2 inputVec;
     public float speed; public float GetSpeed() { return speed; }
     public GameObject defaultAttackSpawnPoint;
@@ -32,14 +33,18 @@ public class Player : MonoBehaviour
     private Vector2 lastPos;
     private float CurrentVelo;
     private float attackDelay;
+    private float defaultAttackSpeed = 0.5f;
+    private float attackSpeed = 0.5f;
 
     public Vector2 targetVec { get; set; } // Àû Å¸°ÙÀÇ º¤ÅÍ
     public Vector2 targetPos { get; set; } // Àû Å¸°ÙÀÇ À§Ä¡
 
     private void Awake()
     {
-        player = this;
+        instance = this;
         playerData = Utils.JsonDataParse<PlayerData>("PlayerData");
+
+        DontDestroyOnLoad(this.gameObject);
     }
 
     private void OnEnable()
@@ -89,6 +94,16 @@ public class Player : MonoBehaviour
         UpdateRotate(inputVec.x);
     }
 
+    public void AttackSpeedUp(float value)
+    {
+        attackSpeed /= value;
+    }
+
+    public void ReturnAttackSpeed()
+    {
+        attackSpeed = defaultAttackSpeed;
+    }
+
     public void LoadPlayerData()
     {
         abilityComponent.InitPlayerData(playerData);
@@ -100,7 +115,7 @@ public class Player : MonoBehaviour
     public void SavePlayerData()
     {
         PlayerData saveData = abilityComponent.GetPlayerData();
-        saveData.hp = healthComponent.GetMaxHealth();
+        saveData.hp = healthComponent.GetMaxHp();
         saveData.money = inventory.GetMoney();
 
         Utils.SaveJsonData("PlayerData", playerData);
@@ -115,7 +130,7 @@ public class Player : MonoBehaviour
     {
         attackDelay += Time.deltaTime;
 
-        if (attackDelay > 0.5f)
+        if (attackDelay > attackSpeed)
         {
             PoolManager.inst.PoolDefaultAttack(defaultAttackSpawnPoint.transform.position, targetVec);
             attackDelay = 0f;

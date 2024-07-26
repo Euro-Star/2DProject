@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class PoolManager : MonoBehaviour
 {
+    private static PoolManager instance;
+    public static PoolManager inst { get { return instance; } }
+
     /* Skill_Pool */
 
     List<List<GameObject>> pools_Skill;
@@ -31,8 +34,6 @@ public class PoolManager : MonoBehaviour
     protected float regenTime = 7f;
     protected float deltaTime = 0f;
 
-    public static PoolManager inst;
-
     private void Awake()
     {
         pools_Enemy = new List<GameObject>();
@@ -41,7 +42,7 @@ public class PoolManager : MonoBehaviour
         pools_Skill = new List<List<GameObject>>();
         pools_Money = new List<GameObject>();
 
-        inst = this;
+        instance = this;
     }
 
     private void Start()

@@ -1,3 +1,5 @@
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using System;
 
 [Serializable]
@@ -8,23 +10,12 @@ public class SkillData
     public float destroyTime;
     public float delay;
     public float coolTime;
-    public float damageRatio;
+    public float skillValue;
+    public int amountOfHeal;
     public string skillExplane;
     public int needMoney;
+    public string skillType;
 }
-
-//public class SkillData
-//{
-//    public int skillCode;
-//    public string skillName;
-//    public int skillLevel;
-//    public float damageOverTime;
-//    public float destroyTime;
-//    public float delay;
-//    public float coolTime;
-//    public float damageRatio;
-//    public int numFloating;
-//}
 
 [Serializable]
 public class PlayerData

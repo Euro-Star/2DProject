@@ -16,6 +16,8 @@ public class CameraManager : MonoBehaviour
     {
         height = Camera.main.orthographicSize;
         width = height * Screen.width / Screen.height;
+
+        DontDestroyOnLoad(this.gameObject);
     }
 
     private void FixedUpdate()

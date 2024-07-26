@@ -29,7 +29,7 @@ public class SkillBase : MonoBehaviour
         collider.enabled = true;
     }
 
-    protected IEnumerator DestroySkill()
+    protected virtual IEnumerator DestroySkill()
     {
         yield return new WaitForSeconds(SkillManager.inst.GetSkillData(skillCode).destroyTime);
         transform.gameObject.SetActive(false);

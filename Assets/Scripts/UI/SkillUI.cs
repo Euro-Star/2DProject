@@ -11,8 +11,6 @@ public class SkillUI : UIBase
     private RectTransform content;
     private Button button_Close;
 
-    private SkillManager skillManager;
-
     enum UIObjects
     {
         SkillContent
@@ -34,9 +32,7 @@ public class SkillUI : UIBase
 
     private void Start()
     {
-        skillManager = SkillManager.inst;
-
-        for (int i = 0; i < skillManager.SkillLength(); ++i)
+        for (int i = 0; i < SkillManager.inst.SkillLength(); ++i)
         {
             GameObject obj = Instantiate(skillUIEntry, content);
             obj.GetComponent<SkillUIEntry>().Init(i);

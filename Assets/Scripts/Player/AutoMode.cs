@@ -10,9 +10,8 @@ public class AutoMode : MonoBehaviour
     LockOn lockOn;
 
     private SkillComponent skillComponent;
-    private PoolManager poolManager;
+    private HealthComponent healthComponent;
     private Rigidbody2D rigid;
-    private Player player;
     private float speed;
     private Vector2 targetVec;
     private int skillLen;
@@ -22,15 +21,15 @@ public class AutoMode : MonoBehaviour
 
     private void OnEnable()
     {
-        skillComponent = GetComponent<SkillComponent>();
         rigid = GetComponent<Rigidbody2D>();
-        player = GetComponent<Player>();
     }
 
     private void Start()
     {
-        speed = player.GetSpeed();
-        poolManager = PoolManager.inst;
+        skillComponent = Player.player.skillComponent;
+        healthComponent = Player.player.healthComponent;
+
+        speed = Player.player.GetSpeed();
         skillLen = SkillManager.inst.SkillLength();
 
         bAutoMode = true;
@@ -49,21 +48,34 @@ public class AutoMode : MonoBehaviour
                 {
                     if (!bArray[i])
                     {
-                        skillComponent.Skill(i);
+                        string skillType = SkillManager.inst.GetSkillData(skillComponent.GetUseSkillIndex(i)).skillType;
+
+                        if (skillType == "Attack" || skillType == "Buff")
+                        {
+                            skillComponent.Skill(i);
+                        }
+                        else if(skillType == "Heal")
+                        {
+                            if(healthComponent.GetHp() < healthComponent.GetMaxHp())
+                            {
+                                skillComponent.Skill(i);
+                            }
+                        }
+                        
                     }
                 }
             }
             else
             {
-                if(!(player.inputVec.magnitude > 0f))
+                if(!(Player.player.inputVec.magnitude > 0f))
                 {
-                    if (poolManager.IsActiveEnemy())
+                    if (PoolManager.inst.IsActiveEnemy())
                     {
                         float minDistance = 999f;
                         Vector2 minDir = Vector2.zero;
                         Vector2 minPos = Vector2.zero;
 
-                        foreach (GameObject enemy in poolManager.GetEnemys())
+                        foreach (GameObject enemy in PoolManager.inst.GetEnemys())
                         {
                             if (enemy.activeSelf == true)
                             {
@@ -91,7 +103,7 @@ public class AutoMode : MonoBehaviour
     {
         if (bAutoMode)
         {
-            player.UpdateRotate(targetVec.x);
+            Player.player.UpdateRotate(targetVec.x);
         }          
     }
 }

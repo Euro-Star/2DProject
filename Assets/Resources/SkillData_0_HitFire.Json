@@ -8,10 +8,11 @@
         "destroyTime": 0.4,
         "delay": 0.1,
         "coolTime": 5,
-        "damageRatio": 5,
+        "skillValue": 5,
+        "amountOfHeal": 0,
         "skillExplane": "공격력의 500%의 데미지를 1회 줍니다.",
-        "needMoney": 100
-        
+        "needMoney": 100,
+        "skillType": "Attack"
       }
     },
     {
@@ -22,9 +23,11 @@
         "destroyTime": 0.4,
         "delay": 0.1,
         "coolTime": 5,
-        "damageRatio": 7,
+        "skillValue": 7,
+        "amountOfHeal": 0,
         "skillExplane": "공격력의 700%의 데미지를 1회 줍니다.",
-        "needMoney": 200
+        "needMoney": 200,
+        "skillType": "Attack"
       }
     },
     {
@@ -35,9 +38,11 @@
         "destroyTime": 0.4,
         "delay": 0.1,
         "coolTime": 5,
-        "damageRatio": 9,
+        "skillValue": 9,
+        "amountOfHeal": 0,
         "skillExplane": "공격력의 900%의 데미지를 1회 줍니다.",
-        "needMoney": 300
+        "needMoney": 300,
+        "skillType": "Attack"
       }
     },
     {
@@ -48,9 +53,11 @@
         "destroyTime": 0.4,
         "delay": 0.1,
         "coolTime": 5,
-        "damageRatio": 12,
+        "skillValue": 12,
+        "amountOfHeal": 0,
         "skillExplane": "공격력의 1200%의 데미지를 1회 줍니다.",
-        "needMoney": 400
+        "needMoney": 400,
+        "skillType": "Attack"
       }
     },
     {
@@ -61,9 +68,11 @@
         "destroyTime": 0.4,
         "delay": 0.1,
         "coolTime": 5,
-        "damageRatio": 15,
+        "skillValue": 15,
+        "amountOfHeal": 0,
         "skillExplane": "공격력의 1500%의 데미지를 1회 줍니다.",
-        "needMoney": 0
+        "needMoney": 0,
+        "skillType": "Attack"
       }
     }
   ]

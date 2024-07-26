@@ -58,7 +58,7 @@ public class Enemy : MonoBehaviour
     }
     private void OnEnable()
     {
-        targetRigid = GameManager.instance.player.GetComponent<Rigidbody2D>();
+        targetRigid = Player.player.GetComponent<Rigidbody2D>();
         healthComponent.InitHealth(10);
         enemyStatus = EnemyStatus.Default;
     }

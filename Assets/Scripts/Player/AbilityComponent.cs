@@ -27,8 +27,8 @@ public class AbilityComponent : MonoBehaviour
     public int GetAtk() { return atk; }
     public int GetTotalExp() { return dictLevelData[level].totalExp; }
     public int GetStatPoint() { return statPoint; }
-    public int GetMaxHp() { return healthComponent.GetMaxHealth(); }
-    public int GetHp() { return healthComponent.GetHealth(); }
+    public int GetMaxHp() { return healthComponent.GetMaxHp(); }
+    public int GetHp() { return healthComponent.GetHp(); }
     public void InitPlayerData(PlayerData playerData)
     {
         atk = playerData.atk;

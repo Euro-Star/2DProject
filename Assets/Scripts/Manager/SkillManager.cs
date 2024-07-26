@@ -36,6 +36,10 @@ public class SkillManager : MonoBehaviour
                 return "SkillData_0_HitFire";
             case 1:
                 return "SkillData_1_FireWall";
+            case 2:
+                return "SkillData_2_Healing";
+            case 3:
+                return "SkillData_3_SpeedUp";
             default:
                 return null;
         }

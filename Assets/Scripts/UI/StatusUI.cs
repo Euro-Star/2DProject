@@ -15,8 +15,6 @@ public class StatusUI : UIBase
     private TextMeshProUGUI text_Hp;
     private TextMeshProUGUI text_StatPoint;
 
-    private AbilityComponent abilityComponent;
-
     enum Buttons
     {
         Button_Atk_Plus,
@@ -46,12 +44,7 @@ public class StatusUI : UIBase
     }
 
     private void OnEnable()
-    {
-        if(abilityComponent == null) 
-        {
-            abilityComponent = Player.player.abilityComponent;
-        }
-
+    { 
         UpdateText();
     }
 
@@ -61,18 +54,18 @@ public class StatusUI : UIBase
         button_Hp_Plus.onClick.AddListener(OnClicked_Hp_Plus);
         button_Close.onClick.AddListener(OnClicked_Close);
 
-        abilityComponent.LevelChangeEvent += UpdateTextEvent;
+        Player.player.abilityComponent.LevelChangeEvent += UpdateTextEvent;
     }
 
     private void OnClicked_Atk_Plus()
     {
-        abilityComponent.IncreaseAtk();
+        Player.player.abilityComponent.IncreaseAtk();
         UpdateText();
     }
 
     private void OnClicked_Hp_Plus()
     {
-        abilityComponent.IncreaseHp();
+        Player.player.abilityComponent.IncreaseHp();
         UpdateText();
     }
     
@@ -83,9 +76,9 @@ public class StatusUI : UIBase
 
     private void UpdateText()
     {
-        text_Atk.text = abilityComponent.GetAtk().ToString();
-        text_Hp.text = abilityComponent.GetMaxHp().ToString();
-        text_StatPoint.text = abilityComponent.GetStatPoint().ToString();
+        text_Atk.text = Player.player.abilityComponent.GetAtk().ToString();
+        text_Hp.text = Player.player.abilityComponent.GetMaxHp().ToString();
+        text_StatPoint.text = Player.player.abilityComponent.GetStatPoint().ToString();
     }
 
     private void UpdateTextEvent(object sender, EventArgs eventArgs)

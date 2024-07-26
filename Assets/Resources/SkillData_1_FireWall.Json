@@ -8,9 +8,11 @@
         "destroyTime": 5,
         "delay": 0.1,
         "coolTime": 20,
-        "damageRatio": 1,
+        "skillValue": 1,
+        "amountOfHeal": 0,
         "skillExplane": "공격력의 100%의 데미지를 0.5초마다 5초동안 지속됩니다.",
-        "needMoney": 100
+        "needMoney": 100,
+        "skillType": "Attack"
       }
     },
     {
@@ -21,9 +23,11 @@
         "destroyTime": 6,
         "delay": 0.1,
         "coolTime": 20,
-        "damageRatio": 1,
+        "skillValue": 1,
+        "amountOfHeal": 0,
         "skillExplane": "공격력의 100%의 데미지를 0.5초마다 6초동안 지속됩니다.",
-        "needMoney": 200
+        "needMoney": 200,
+        "skillType": "Attack"
       }
     },
     {
@@ -34,9 +38,11 @@
         "destroyTime": 7,
         "delay": 0.1,
         "coolTime": 20,
-        "damageRatio": 2,
+        "skillValue": 2,
+        "amountOfHeal": 0,
         "skillExplane": "공격력의 200%의 데미지를 0.5초마다 7초동안 지속됩니다.",
-        "needMoney": 300
+        "needMoney": 300,
+        "skillType": "Attack"
       }
     },
     {
@@ -47,9 +53,11 @@
         "destroyTime": 8,
         "delay": 0.1,
         "coolTime": 20,
-        "damageRatio": 2,
+        "skillValue": 2,
+        "amountOfHeal": 0,
         "skillExplane": "공격력의 200%의 데미지를 0.5초마다 8초동안 지속됩니다.",
-        "needMoney": 400
+        "needMoney": 400,
+        "skillType": "Attack"
       }
     },
     {
@@ -60,9 +68,11 @@
         "destroyTime": 10,
         "delay": 0.1,
         "coolTime": 20,
-        "damageRatio": 3,
+        "skillValue": 3,
+        "amountOfHeal": 0,
         "skillExplane": "공격력의 300%의 데미지를 0.5초마다 10초동안 지속됩니다.",
-        "needMoney": 0
+        "needMoney": 0,
+        "skillType": "Attack"
       }
     }
   ]

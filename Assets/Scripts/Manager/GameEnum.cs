@@ -23,6 +23,14 @@ public enum GameUI
     SkillUI,
 }
 
+public enum SkillEnum
+{
+    HitFire = 0,
+    FireWall,
+    Healing,
+    SpeedUp
+}
+
 
 
 

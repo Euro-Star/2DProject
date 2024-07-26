@@ -6,11 +6,10 @@ using UnityEngine;
 
 public class SkillComponent : MonoBehaviour
 {
-    private int[] useSkillIndex = { 0, 1 };
+    private int[] useSkillIndex = { 0, 1, 2, 3 };
     private float[] skillCoolTimes;
     private bool[] bAvailable;
 
-    private SkillManager skillManager;
     private AbilityComponent abilityComponent;
 
     private void Awake()
@@ -21,12 +20,12 @@ public class SkillComponent : MonoBehaviour
 
     private void Start()
     {
-        skillManager = SkillManager.inst;
         abilityComponent = Player.player.abilityComponent;
     }
 
     public bool[] IsSkillsAvailable() { return bAvailable; }
     public float GetCoolTime(int index) { return skillCoolTimes[index]; }
+    public int GetUseSkillIndex(int index) { return useSkillIndex[index]; }
 
 
     private IEnumerator CoolTime(int index)
@@ -34,7 +33,7 @@ public class SkillComponent : MonoBehaviour
         while (skillCoolTimes[index] > 0f)
         {
             skillCoolTimes[index] -= Time.deltaTime;
-            HUD.instance.dele_UpdateCooltime(index, skillCoolTimes[index]);
+            HUD.inst.dele_UpdateCooltime(index, skillCoolTimes[index]);
             yield return new WaitForFixedUpdate();
         }
 

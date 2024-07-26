@@ -11,7 +11,7 @@ public class FireWall : SkillBase
     protected override void Awake()
     {
         base.Awake();
-        skillCode = 1;
+        skillCode = (int)SkillEnum.FireWall;
     }
 
     protected override void OnEnable()
@@ -34,7 +34,7 @@ public class FireWall : SkillBase
             {
                 Enemy enemy = collision.GetComponent<Enemy>();
 
-                enemy.Attacked((int)Math.Floor(playerDamage * SkillManager.inst.GetSkillData(skillCode).damageRatio));
+                enemy.Attacked((int)Math.Floor(playerDamage * SkillManager.inst.GetSkillData(skillCode).skillValue));
                 enemy.KnockBack();
             }
 

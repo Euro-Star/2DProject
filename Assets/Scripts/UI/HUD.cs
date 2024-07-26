@@ -7,9 +7,11 @@ using UnityEngine.UI;
 
 public class HUD : UIBase
 {
+    private static HUD instance;
+    public static HUD inst { get { return instance; } }
+
     public delegate void Dele_UpdateCooltime(int index, float cooltime);
     public Dele_UpdateCooltime dele_UpdateCooltime;
-    public static HUD instance;
 
     private Button[] buttons_Skill;
     private Button button_Status;
@@ -32,6 +34,8 @@ public class HUD : UIBase
     {
         Button_Skill_0,
         Button_Skill_1,
+        Button_Skill_2,
+        Button_Skill_3,
         Button_Status,
         Button_SkillUI,
     }
@@ -43,7 +47,9 @@ public class HUD : UIBase
         Text_MaxHp,
         Text_CurrentHp,
         Text_CoolTime_0,
-        Text_CoolTime_1
+        Text_CoolTime_1,
+        Text_CoolTime_2,
+        Text_CoolTime_3
     }
 
     enum Scrollbars
@@ -59,8 +65,8 @@ public class HUD : UIBase
 
         instance = this;
 
-        buttons_Skill = new Button[2];
-        texts_Cooltime = new TextMeshProUGUI[2];
+        buttons_Skill = new Button[4];
+        texts_Cooltime = new TextMeshProUGUI[4];
 
         Bind<Button>(typeof(Buttons));
         Bind<TextMeshProUGUI>(typeof(Texts));
@@ -68,11 +74,15 @@ public class HUD : UIBase
 
         buttons_Skill[0] = Get<Button>((int)Buttons.Button_Skill_0);
         buttons_Skill[1] = Get<Button>((int)Buttons.Button_Skill_1);
+        buttons_Skill[2] = Get<Button>((int)Buttons.Button_Skill_2);
+        buttons_Skill[3] = Get<Button>((int)Buttons.Button_Skill_3);
         button_Status = Get<Button>((int)Buttons.Button_Status);
         button_SkillUI = Get<Button>((int)Buttons.Button_SkillUI);
 
         texts_Cooltime[0] = Get<TextMeshProUGUI>((int)Texts.Text_CoolTime_0);
         texts_Cooltime[1] = Get<TextMeshProUGUI>((int)Texts.Text_CoolTime_1);
+        texts_Cooltime[2] = Get<TextMeshProUGUI>((int)Texts.Text_CoolTime_2);
+        texts_Cooltime[3] = Get<TextMeshProUGUI>((int)Texts.Text_CoolTime_3);
 
         text_Money = Get<TextMeshProUGUI>((int)Texts.Text_Money);
         text_Level = Get<TextMeshProUGUI>((int)Texts.Text_Level);
@@ -81,6 +91,8 @@ public class HUD : UIBase
 
         bar_Exp = Get<Scrollbar>((int)Scrollbars.Bar_Exp);
         bar_Hp = Get<Scrollbar>((int)Scrollbars.Bar_Hp);
+
+        DontDestroyOnLoad(this.gameObject);
     }
 
     private void OnEnable()

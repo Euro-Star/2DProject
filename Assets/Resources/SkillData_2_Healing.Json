@@ -1,0 +1,79 @@
+{
+  "data": [
+    {
+      "key": 1,
+      "value": {
+        "skillName": "Healing",
+        "damageOverTime": 0,
+        "destroyTime": 0,
+        "delay": 0,
+        "coolTime": 20,
+        "skillValue": 0,
+        "amountOfHeal": 10,
+        "skillExplane": "체력을 10 회복합니다.",
+        "needMoney": 100,
+        "skillType": "Heal"
+      }
+    },
+    {
+      "key": 2,
+      "value": {
+        "skillName": "Healing",
+        "damageOverTime": 0,
+        "destroyTime": 0,
+        "delay": 0,
+        "coolTime": 20,
+        "skillValue": 0,
+        "amountOfHeal": 20,
+        "skillExplane": "체력을 20 회복합니다.",
+        "needMoney": 200,
+        "skillType": "Heal"
+      }
+    },
+    {
+      "key": 3,
+      "value": {
+        "skillName": "Healing",
+        "damageOverTime": 0,
+        "destroyTime": 0,
+        "delay": 0,
+        "coolTime": 20,
+        "skillValue": 0,
+        "amountOfHeal": 30,
+        "skillExplane": "체력을 30 회복합니다.",
+        "needMoney": 300,
+        "skillType": "Heal"
+      }
+    },
+    {
+      "key": 4,
+      "value": {
+        "skillName": "Healing",
+        "damageOverTime": 0,
+        "destroyTime": 0,
+        "delay": 0,
+        "coolTime": 20,
+        "skillValue": 0,
+        "amountOfHeal": 40,
+        "skillExplane": "체력을 40 회복합니다.",
+        "needMoney": 400,
+        "skillType": "Heal"
+      }
+    },
+    {
+      "key": 5,
+      "value": {
+        "skillName": "Healing",
+        "damageOverTime": 0,
+        "destroyTime": 0,
+        "delay": 0,
+        "coolTime": 20,
+        "skillValue": 0,
+        "amountOfHeal": 50,
+        "skillExplane": "체력을 50 회복합니다.",
+        "needMoney": 0,
+        "skillType": "Heal"
+      }
+    }
+  ]
+}
