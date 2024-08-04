@@ -2,56 +2,61 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.SceneManagement;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PoolManager : MonoBehaviour
 {
     private static PoolManager instance;
     public static PoolManager inst { get { return instance; } }
-
-    /* Skill_Pool */
-
-    List<List<GameObject>> pools_Skill;
-
-    /////////////////
     
-    [SerializeField]
-    GameObject[] prefabsEnemy;
-    [SerializeField]
-    GameObject prefabsDefalutAttack;
-    [SerializeField]
-    GameObject prefabsMoney;
-    [SerializeField]
-    Transform[] spawnPosition;
-    [SerializeField]
-    Transform defaultSpawnPosition;
-    
-    protected List<GameObject> pools_Enemy;
-    protected List<GameObject> pools_DefalutAttack;
-    protected List<GameObject> pools_Money;
-    protected List<DefaultAttackComponent> defaultAttackComponents;
+    [SerializeField] private GameObject[] prefabsEnemy;
+    [SerializeField] private GameObject prefabsDefalutAttack;
+    [SerializeField] private GameObject prefabsMoney;
+    [SerializeField] private Transform[] spawnPosition;
+    [SerializeField] private GameObject prefabEnemySpawnPoint;
+    [SerializeField] private GameObject prefabDefaultSpawnPoint;
 
-    protected GameObject gameObj;
-    protected float regenTime = 7f;
-    protected float deltaTime = 0f;
+    private Transform defaultSpawnPosition;
+    private Transform enemySpawnPosition;
+
+    private List<GameObject> pools_Enemy;
+    private List<GameObject> pools_DefalutAttack;
+    private List<GameObject> pools_Money;
+    private List<DefaultAttackComponent> defaultAttackComponents;
+    private List<List<GameObject>> pools_Skill;
+
+    private GameObject gameObj;
+    private float regenTime = 7f;
+    private float deltaTime = 0f;
+    private Vector3 defaultPosition;
+    private Quaternion defaultQuat;
 
     private void Awake()
     {
         pools_Enemy = new List<GameObject>();
         pools_DefalutAttack = new List<GameObject>();
-        defaultAttackComponents= new List<DefaultAttackComponent>();
+        defaultAttackComponents = new List<DefaultAttackComponent>();
         pools_Skill = new List<List<GameObject>>();
         pools_Money = new List<GameObject>();
+
+        defaultPosition = new Vector3(100, 100, 100);
+        defaultQuat = new Quaternion();
 
         instance = this;
     }
 
     private void Start()
     {
+        enemySpawnPosition = Instantiate(prefabEnemySpawnPoint, defaultPosition, defaultQuat).GetComponent<Transform>();
+        defaultSpawnPosition = Instantiate(prefabDefaultSpawnPoint, defaultPosition, defaultQuat).GetComponent<Transform>();
+
         EnemySpawn(0, 10);
         AttackObjSpawn(30);
         SkillSpawn();
         PoolEnemy();
         SpawnMoney();
+
+        SceneManager.sceneLoaded += LoadSceneEvent;
     }
 
     private void Update()
@@ -64,13 +69,22 @@ public class PoolManager : MonoBehaviour
             deltaTime = 0f;
         }
     }
+    private void LoadSceneEvent(Scene scene, LoadSceneMode mode)
+    {
+        enemySpawnPosition = Instantiate(prefabEnemySpawnPoint, defaultPosition, defaultQuat).GetComponent<Transform>();
+
+        pools_Enemy.Clear();
+
+        EnemySpawn(0, 10);
+        PoolEnemy();
+    }
 
     void EnemySpawn(int stage, int num)
     {
         // Àû ½ºÆù
         for(int i = 0; i < num; i++) 
         {         
-            gameObj = Instantiate(prefabsEnemy[stage], defaultSpawnPosition);
+            gameObj = Instantiate(prefabsEnemy[stage], enemySpawnPosition);
             pools_Enemy.Add(gameObj);
 
             gameObj.SetActive(false);

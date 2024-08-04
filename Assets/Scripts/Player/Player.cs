@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 using UnityEngine.Windows;
+using UnityEngine.SceneManagement;
 using GameUtils;
 
 public class Player : MonoBehaviour
@@ -66,6 +67,8 @@ public class Player : MonoBehaviour
     private void Start()
     {
         LoadPlayerData();
+
+        SceneManager.sceneLoaded += LoadSceneEvent;
     }
 
     // 물리 프레임마다 업데이트 되는 함수
@@ -92,6 +95,11 @@ public class Player : MonoBehaviour
     {
         anim.SetFloat("Speed", CurrentVelo);
         UpdateRotate(inputVec.x);
+    }
+
+    private void LoadSceneEvent(Scene scene, LoadSceneMode mode)
+    {
+        this.gameObject.transform.position = Vector3.zero;
     }
 
     public void AttackSpeedUp(float value)

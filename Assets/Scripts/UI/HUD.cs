@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HUD : UIBase
 {
@@ -30,6 +31,7 @@ public class HUD : UIBase
     private HealthComponent healthComponent;
     private UIManager uIManager;
 
+    Button testButton;
     enum Buttons
     {
         Button_Skill_0,
@@ -38,6 +40,7 @@ public class HUD : UIBase
         Button_Skill_3,
         Button_Status,
         Button_SkillUI,
+        Button_TestButton
     }
 
     enum Texts
@@ -92,6 +95,8 @@ public class HUD : UIBase
         bar_Exp = Get<Scrollbar>((int)Scrollbars.Bar_Exp);
         bar_Hp = Get<Scrollbar>((int)Scrollbars.Bar_Hp);
 
+        testButton = Get<Button>((int)Buttons.Button_TestButton);
+
         DontDestroyOnLoad(this.gameObject);
     }
 
@@ -124,6 +129,7 @@ public class HUD : UIBase
 
         button_Status.onClick.AddListener(OnClicked_Status);
         button_SkillUI.onClick.AddListener(OnClicked_SkillUI);
+        testButton.onClick.AddListener(TestFunc);
     }
 
 
@@ -140,6 +146,11 @@ public class HUD : UIBase
     private void OnClicked_SkillUI()
     {
         uIManager.UIController(GameUI.SkillUI, true);
+    }
+
+    private void TestFunc()
+    {
+        SceneManager.LoadScene("TestScene");
     }
 
     private void UpdateMoneyText(object sender, EventArgs eventArgs)

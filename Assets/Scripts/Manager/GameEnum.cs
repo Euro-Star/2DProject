@@ -6,7 +6,10 @@ using UnityEngine;
 public enum GameTag
 {   
     Untagged = 0,
+    EditorOnly,
     Player,
+    Manager,
+    UI,
     Enemy,
     Wall
 }
