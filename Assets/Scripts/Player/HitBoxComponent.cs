@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using GameUtils;
 using System;
+using Unity.VisualScripting;
 
 public class HitBoxComponent : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class HitBoxComponent : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (Utils.StringToEnum<GameTag>(collision.tag) == GameTag.Enemy)
+        if (Utils.StringToEnum<GameTag>(collision.tag) == GameTag.Enemy || Utils.StringToEnum<GameTag>(collision.tag) == GameTag.Boss)
         {
             if(!bHitCooltime)
             {
@@ -39,5 +40,10 @@ public class HitBoxComponent : MonoBehaviour
     {   
         yield return new WaitForSeconds(0.8f);
         bHitCooltime = false;
+    }
+
+    public HealthComponent GetHealthComponent()
+    {
+        return healthComponent;
     }
 }

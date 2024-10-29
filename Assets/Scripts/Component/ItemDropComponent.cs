@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class ItemDropComponent : MonoBehaviour
 {
-    public void DropMoney(Vector2 position)
+    public void DropMoney(Vector2 position, int money)
     {
-        PoolManager.inst.PoolMoney().transform.position = position;
+        GameObject gameObject = PoolManager.inst.PoolMoney();
+        gameObject.transform.position = position;
+        gameObject.GetComponent<Money>().SetMoney(money);
     }
 
     public void DropExp(int exp)

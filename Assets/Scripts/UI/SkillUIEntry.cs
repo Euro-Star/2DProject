@@ -68,8 +68,10 @@ public class SkillUIEntry : UIBase
     public void Init(int skillCode)
     {
         this.skillCode = skillCode;
-
+    
         UpdateText(this.skillCode);
+        image_Skill.sprite = SkillManager.inst.GetSkillImage(this.skillCode);
+        image_Skill.color = SkillManager.inst.GetSkillImageColor(this.skillCode);
     }
 
     private void UpdateText(int skillCode)

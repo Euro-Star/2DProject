@@ -24,7 +24,7 @@ public class HierarchyCustom
         {
             EditorApplication.hierarchyWindowItemOnGUI -= OnHierarchyGUI;
         }
-
+        
         initialized = true;
        
 

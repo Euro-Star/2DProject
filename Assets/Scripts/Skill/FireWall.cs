@@ -22,6 +22,7 @@ public class FireWall : SkillBase
     public override void UseSkill(Vector2 target, int playerDamage)
     {
         base.UseSkill(target, playerDamage);
+        SoundManager.inst.PlaySound(SoundType.Skill, (int)SkillSound.Skill_2_FireWall);
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -30,7 +31,7 @@ public class FireWall : SkillBase
 
         if(currentTime >= SkillManager.inst.GetSkillData(skillCode).damageOverTime)
         {
-            if (Utils.StringToEnum<GameTag>(collision.tag) == GameTag.Enemy)
+            if (Utils.StringToEnum<GameTag>(collision.tag) == GameTag.Enemy || Utils.StringToEnum<GameTag>(collision.tag) == GameTag.Boss)
             {
                 Enemy enemy = collision.GetComponent<Enemy>();
 

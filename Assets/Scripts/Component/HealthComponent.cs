@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using TMPro;
+using GameUtils;
+using UnityEngine.SceneManagement;
 
 public class HealthComponent : MonoBehaviour
 {
@@ -18,6 +20,19 @@ public class HealthComponent : MonoBehaviour
 
     public int GetMaxHp() { return maxHp; }
     public int GetHp() { return currnetHp; }
+
+    private void Start()
+    {
+        SceneManager.sceneLoaded += LoadSceneEvent;
+    }
+
+    private void LoadSceneEvent(Scene scene, LoadSceneMode mode)
+    {
+        currnetHp = maxHp;
+
+        HpChangeEvent?.Invoke(this, EventArgs.Empty);
+    }
+
     public void InitHealth(int Hp)
     {
         maxHp = Hp;
@@ -43,6 +58,8 @@ public class HealthComponent : MonoBehaviour
         }
 
         HpChangeEvent?.Invoke(this, EventArgs.Empty);
+
+        BossHPView();
     }
 
     public void Heal(int heal)
@@ -70,5 +87,13 @@ public class HealthComponent : MonoBehaviour
         currnetHp += 10;
 
         HpChangeEvent?.Invoke(this, EventArgs.Empty);
+    }
+
+    public void BossHPView()
+    {
+        if (Utils.StringToEnum<GameTag>(this.gameObject.tag) == GameTag.Boss)
+        {
+            HUD.inst.UpdateBossHP(maxHp, currnetHp);
+        }
     }
 }

@@ -11,7 +11,10 @@ public enum GameTag
     Manager,
     UI,
     Enemy,
-    Wall
+    Wall,
+    EnemyProjectile,
+    PlayerHitBox,
+    Boss
 }
 
 public enum EnemyStatus
@@ -24,6 +27,9 @@ public enum GameUI
 {
     StatUI = 0,
     SkillUI,
+    StageUI,
+    DeathUI,
+    GameTestUI
 }
 
 public enum SkillEnum
@@ -32,6 +38,50 @@ public enum SkillEnum
     FireWall,
     Healing,
     SpeedUp
+}
+
+public enum CharacterAnim
+{
+    Idle = 0,
+    Run,
+    Death,
+    Stun,
+    AttackSword,
+    AttackBow,
+    AttackMagic,
+    SkillSword,
+    SkillBow,
+    SkillMagic
+}
+
+public enum SoundType
+{
+    Bgm,
+    Skill,
+    Enemy
+}
+
+public enum BgmSound
+{
+    Bgm_Start,
+    Bgm_Stage,
+}
+
+public enum SkillSound
+{
+    Skill_1_HitFire,
+    Skill_2_FireWall,
+    Skill_3_Healing,
+    Skill_4_SpeedUp,
+}
+
+public enum EnemySound
+{
+    SlimeHit,
+    SlimeDeath_1,
+    SlimeDeath_2,
+    SlimeBoss_HitSkill,
+    SlimeBoss_Skill_1
 }
 
 

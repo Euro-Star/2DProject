@@ -16,19 +16,30 @@ public class AbilityComponent : MonoBehaviour
 
     private Dictionary<int, LevelData> dictLevelData;
 
-    private HealthComponent healthComponent;
-
     public event EventHandler ExpChangeEvent;
     public event EventHandler LevelChangeEvent;
 
 
     public int GetLevel() { return level; }
     public int GetExp() { return exp; }
-    public int GetAtk() { return atk; }
     public int GetTotalExp() { return dictLevelData[level].totalExp; }
     public int GetStatPoint() { return statPoint; }
-    public int GetMaxHp() { return healthComponent.GetMaxHp(); }
-    public int GetHp() { return healthComponent.GetHp(); }
+    public int GetMaxHp() { return Player.player.healthComponent.GetMaxHp(); }
+    public int GetHp() { return Player.player.healthComponent.GetHp(); }
+    public int GetStatAtk() { return atk; }
+    public int GetAtk()
+    {
+        int res = UnityEngine.Random.Range(atk - atk / 2, atk + atk / 2);
+        if (res <= 1)
+        {
+            return 1;
+        }
+        else
+        {
+            return res;
+        }
+    }
+
     public void InitPlayerData(PlayerData playerData)
     {
         atk = playerData.atk;
@@ -55,11 +66,6 @@ public class AbilityComponent : MonoBehaviour
         dictLevelData = Utils.JsonToDictionary<int, LevelData>("LevelData");
     }
 
-    private void OnEnable()
-    {
-        healthComponent = Player.player.healthComponent;
-    }
-
     public void AddExp(int exp)
     {
         this.exp += exp;
@@ -77,13 +83,16 @@ public class AbilityComponent : MonoBehaviour
         exp %= GetTotalExp();
         statPoint += 2;
         ++level;
-        healthComponent.MaxHeal();
+        Player.player.healthComponent.MaxHeal();
 
         LevelChangeEvent?.Invoke(this, EventArgs.Empty);
     }
 
     public void IncreaseAtk()
     {
+
+        Debug.Log(statPoint);
+
         if(statPoint > 0)
         {
             --statPoint;
@@ -93,10 +102,12 @@ public class AbilityComponent : MonoBehaviour
 
     public void IncreaseHp()
     {
-        if(statPoint > 0)
+        Debug.Log(statPoint);
+
+        if (statPoint > 0)
         {
             --statPoint;
-            healthComponent.IncreaseHp();
+            Player.player.healthComponent.IncreaseHp();
         }
     }
 }

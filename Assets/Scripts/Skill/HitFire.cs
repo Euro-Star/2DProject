@@ -9,7 +9,7 @@ public class HitFire : SkillBase
     protected override void Awake()
     {
         base.Awake();
-        skillCode = (int)SkillEnum.FireWall;
+        skillCode = (int)SkillEnum.HitFire;
     }
 
     protected override void OnEnable()
@@ -17,14 +17,21 @@ public class HitFire : SkillBase
         base.OnEnable();
     }
 
+    protected override IEnumerator DestroySkill()
+    {
+        yield return new WaitForSeconds(SkillManager.inst.GetSkillData(skillCode).destroyTime);
+        transform.gameObject.SetActive(false);
+    }
+
     public override void UseSkill(Vector2 target, int playerDamage)
     {
         base.UseSkill(target, playerDamage);
+        SoundManager.inst.PlaySound(SoundType.Skill, (int)SkillSound.Skill_1_HitFire);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (Utils.StringToEnum<GameTag>(collision.tag) == GameTag.Enemy)
+        if (Utils.StringToEnum<GameTag>(collision.tag) == GameTag.Enemy || Utils.StringToEnum<GameTag>(collision.tag) == GameTag.Boss)
         {
             Enemy enemy = collision.GetComponent<Enemy>();
 

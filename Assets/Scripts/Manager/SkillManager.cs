@@ -6,8 +6,9 @@ using Unity.VisualScripting;
 
 public class SkillManager : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject[] skillPrefabs;
+    [SerializeField] private GameObject[] skillPrefabs;
+    [SerializeField] private Sprite[] skillImages;
+    [SerializeField] private Color[] skillImageColors;
 
     private static SkillManager instance;
     public static SkillManager inst { get { return instance; } }
@@ -60,14 +61,29 @@ public class SkillManager : MonoBehaviour
         return skillData[index][skillLevel[index]];
     }
 
-    public int GetSkillLevel(int skillCode)
+    public string GetSkillType(int index)
     {
-        return skillLevel[skillCode];
+        return skillData[index][skillLevel[index]].skillType;
     }
 
-    public void SkillLevelUp(int skillCode)
+    public int GetSkillLevel(int index)
     {
-        ++skillLevel[skillCode]; 
+        return skillLevel[index];
+    }
+
+    public Sprite GetSkillImage(int index)
+    {
+        return skillImages[index];
+    }
+
+    public Color GetSkillImageColor(int index)
+    {
+        return skillImageColors[index];
+    }
+
+    public void SkillLevelUp(int index)
+    {
+        ++skillLevel[index]; 
     }
 
     public void InitSkillLevel(int[] skillLevel)

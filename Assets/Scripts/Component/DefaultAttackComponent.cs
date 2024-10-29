@@ -10,6 +10,7 @@ public class DefaultAttackComponent : MonoBehaviour
 
     private Rigidbody2D rigid;
     private AbilityComponent abilityComponent;
+    private Vector2 prev_target;
 
     public Vector2 targetVec { get; set; }
     
@@ -29,12 +30,22 @@ public class DefaultAttackComponent : MonoBehaviour
     private void FixedUpdate()
     {
         Vector2 normalVec = targetVec * speed * Time.fixedDeltaTime;
+
+        if(normalVec.magnitude < 0.1f)
+        {
+            normalVec = prev_target;
+        }
+        else
+        {
+            prev_target = normalVec;
+        }
+
         rigid.MovePosition(rigid.position + normalVec);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(Utils.StringToEnum<GameTag>(collision.tag) == GameTag.Enemy)
+        if(Utils.StringToEnum<GameTag>(collision.tag) == GameTag.Enemy || Utils.StringToEnum<GameTag>(collision.tag) == GameTag.Boss)
         {
             Enemy enemy = collision.GetComponent<Enemy>();
             

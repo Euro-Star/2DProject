@@ -1,0 +1,54 @@
+{
+  "data": [
+    {
+      "key": "Stage_1",
+      "value": {
+        "hp": 10,
+        "atk": 1,
+        "exp": 8,
+        "money": 10,
+        "openLevel" : 1
+      }
+    },
+    {
+      "key": "Stage_2",
+      "value": {
+        "hp": 30,
+        "atk": 2,
+        "exp": 14,
+        "money": 15,
+        "openLevel": 3
+      }
+    },
+    {
+      "key": "Stage_3",
+      "value": {
+        "hp": 60,
+        "atk": 4,
+        "exp": 20,
+        "money": 20,
+        "openLevel": 5
+      }
+    },
+    {
+      "key": "Stage_4",
+      "value": {
+        "hp": 100,
+        "atk": 6,
+        "exp": 28,
+        "money": 28,
+        "openLevel": 7
+      }
+    },
+    {
+      "key": "Stage_5",
+      "value": {
+        "hp": 10000,
+        "atk": 20,
+        "exp": 1000,
+        "money": 500,
+        "openLevel": 9
+      }
+    } 
+  ]
+}

@@ -6,7 +6,7 @@ using TMPro;
 public class FloatingUI : MonoBehaviour
 {
     TextMeshPro textFloating;
-    float offsetY = 2.5f;
+    float offsetY = 0.5f;
     float destoryTime = 2f;
     float moveSpeed = 1.5f;
     Color alpha;

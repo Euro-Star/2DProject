@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -50,10 +49,8 @@ public class PoolManager : MonoBehaviour
         enemySpawnPosition = Instantiate(prefabEnemySpawnPoint, defaultPosition, defaultQuat).GetComponent<Transform>();
         defaultSpawnPosition = Instantiate(prefabDefaultSpawnPoint, defaultPosition, defaultQuat).GetComponent<Transform>();
 
-        EnemySpawn(0, 10);
         AttackObjSpawn(30);
         SkillSpawn();
-        PoolEnemy();
         SpawnMoney();
 
         SceneManager.sceneLoaded += LoadSceneEvent;
@@ -71,6 +68,11 @@ public class PoolManager : MonoBehaviour
     }
     private void LoadSceneEvent(Scene scene, LoadSceneMode mode)
     {
+        if(SceneManager.GetActiveScene().name == "LoadingScene" || SceneManager.GetActiveScene().name == "Stage_5")
+        {
+            return;
+        }
+
         enemySpawnPosition = Instantiate(prefabEnemySpawnPoint, defaultPosition, defaultQuat).GetComponent<Transform>();
 
         pools_Enemy.Clear();
@@ -111,11 +113,20 @@ public class PoolManager : MonoBehaviour
         {
             List<GameObject> list = new List<GameObject>();
 
-            for (int j = 0; j < 3; j++)
+            for (int j = 0; j < 4; j++)
             {
-                gameObj = Instantiate(SkillManager.inst.GetSkillPrefab(i), defaultSpawnPosition);
-                list.Add(gameObj);
-                gameObj.SetActive(false);
+                if (SkillManager.inst.GetSkillType(i) == "Heal" || SkillManager.inst.GetSkillType(i) == "Buff")
+                {
+                    gameObj = Instantiate(SkillManager.inst.GetSkillPrefab(i), Player.player.transform);
+                    list.Add(gameObj);
+                    gameObj.SetActive(false);
+                }
+                else
+                {
+                    gameObj = Instantiate(SkillManager.inst.GetSkillPrefab(i), defaultSpawnPosition);
+                    list.Add(gameObj);
+                    gameObj.SetActive(false);
+                }
             }
 
             pools_Skill.Add(list);
@@ -138,11 +149,14 @@ public class PoolManager : MonoBehaviour
     {
         foreach(GameObject p in pools_Enemy)
         {
-            if(p.activeSelf == false)
+            if(p != null)
             {
-                p.SetActive(true); 
-                p.transform.position = spawnPosition[Random.Range(0, spawnPosition.Length - 1)].position;
-            }
+                if (p.activeSelf == false)
+                {
+                    p.SetActive(true);
+                    p.transform.position = spawnPosition[Random.Range(0, spawnPosition.Length - 1)].position;
+                }
+            }          
         }
     }
 
@@ -173,6 +187,8 @@ public class PoolManager : MonoBehaviour
             }
         }
 
+        
+
         return null;
     }
 
@@ -195,12 +211,16 @@ public class PoolManager : MonoBehaviour
 
     public bool IsActiveEnemy()
     {
+
         foreach (GameObject p in pools_Enemy)
         {
-            if (p.activeSelf == true)
+            if (p != null)
             {
-                return true;
-            }
+                if (p.activeSelf == true)
+                {
+                    return true;
+                }
+            }               
         }
 
         return false;

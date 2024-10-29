@@ -9,6 +9,7 @@ public class SkillComponent : MonoBehaviour
     private int[] useSkillIndex = { 0, 1, 2, 3 };
     private float[] skillCoolTimes;
     private bool[] bAvailable;
+    private bool bSkillDelay;
 
     private AbilityComponent abilityComponent;
 
@@ -26,6 +27,7 @@ public class SkillComponent : MonoBehaviour
     public bool[] IsSkillsAvailable() { return bAvailable; }
     public float GetCoolTime(int index) { return skillCoolTimes[index]; }
     public int GetUseSkillIndex(int index) { return useSkillIndex[index]; }
+    public void SetSkillDelay(bool skillDelay) { bSkillDelay = skillDelay; }
 
 
     private IEnumerator CoolTime(int index)
@@ -43,10 +45,16 @@ public class SkillComponent : MonoBehaviour
 
     public void Skill(int index)
     {
+        if (bSkillDelay)
+        {
+            return;
+        }
+
         if (!bAvailable[index])
         {
             SkillBase skill = PoolManager.inst.PoolSkill(useSkillIndex[index]).GetComponent<SkillBase>();
             skill.UseSkill(Player.player.targetPos, abilityComponent.GetAtk());
+            Player.player.PlayAnimation((int)CharacterAnim.SkillMagic);
             bAvailable[index] = true;
 
             skillCoolTimes[index] = SkillManager.inst.GetSkillData(useSkillIndex[index]).coolTime;

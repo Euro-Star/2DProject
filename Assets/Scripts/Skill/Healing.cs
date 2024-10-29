@@ -20,5 +20,6 @@ public class Healing : SkillBase
         base.UseSkill(target, playerDamage);
 
         Player.player.healthComponent.Heal(SkillManager.inst.GetSkillData(skillCode).amountOfHeal);
+        SoundManager.inst.PlaySound(SoundType.Skill, (int)SkillSound.Skill_3_Healing);
     }
 }

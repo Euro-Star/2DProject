@@ -2,22 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using GameUtils;
-using UnityEditor.EditorTools;
-
 public class AutoMode : MonoBehaviour
 {
     [SerializeField]
     LockOn lockOn;
 
-    private SkillComponent skillComponent;
-    private HealthComponent healthComponent;
     private Rigidbody2D rigid;
     private float speed;
     private Vector2 targetVec;
     private int skillLen;
 
-    public bool bAutoMode; public bool IsAutoMode() { return bAutoMode; }
-
+    public bool bAutoMode;
+    public bool IsAutoMode() { return bAutoMode; }
+    public void SetAutoMode(bool bAuto) { bAutoMode = bAuto; }
 
     private void OnEnable()
     {
@@ -26,9 +23,6 @@ public class AutoMode : MonoBehaviour
 
     private void Start()
     {
-        skillComponent = Player.player.skillComponent;
-        healthComponent = Player.player.healthComponent;
-
         speed = Player.player.GetSpeed();
         skillLen = SkillManager.inst.SkillLength();
 
@@ -37,28 +31,33 @@ public class AutoMode : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(bAutoMode)
+        if (Player.player.IsDeath())
+        {
+            return;
+        }
+
+        if (bAutoMode)
         {
             if(lockOn.IsOverlapEnemy())
             {
                 targetVec = Vector2.zero;
-                bool[] bArray = skillComponent.IsSkillsAvailable();
+                bool[] bArray = Player.player.skillComponent.IsSkillsAvailable();
 
                 for (int i = 0; i < skillLen; ++i)
                 {
                     if (!bArray[i])
                     {
-                        string skillType = SkillManager.inst.GetSkillData(skillComponent.GetUseSkillIndex(i)).skillType;
+                        string skillType = SkillManager.inst.GetSkillData(Player.player.skillComponent.GetUseSkillIndex(i)).skillType;
 
                         if (skillType == "Attack" || skillType == "Buff")
                         {
-                            skillComponent.Skill(i);
+                            Player.player.skillComponent.Skill(i);
                         }
                         else if(skillType == "Heal")
                         {
-                            if(healthComponent.GetHp() < healthComponent.GetMaxHp())
+                            if(Player.player.healthComponent.GetHp() < Player.player.healthComponent.GetMaxHp())
                             {
-                                skillComponent.Skill(i);
+                                Player.player.skillComponent.Skill(i);
                             }
                         }
                         

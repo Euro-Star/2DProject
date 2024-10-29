@@ -4,6 +4,7 @@ using UnityEditor;
 using UnityEngine;
 using static UnityEngine.Mesh;
 
+#if UNITY_EDITOR
 [CreateAssetMenu(fileName = "HierarchyData", menuName = "ScriptableObjectAsset")]
 public class HierarchyData : ScriptableObject
 {
@@ -25,3 +26,4 @@ public class HierarchyData : ScriptableObject
         HierarchyCustom.Init();
     }
 }
+#endif

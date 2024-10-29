@@ -5,16 +5,30 @@ using GameUtils;
 
 public class Money : MonoBehaviour
 {
-    int money = 0;
+    private int money = 0;
+    private int speed = 7;
+    private Vector2 dirVec;
+    private Vector2 nextVec;
 
-    private void OnEnable()
+    private Rigidbody2D rigid;
+
+    private void Awake()
     {
-        SetMoney();
+        rigid = GetComponent<Rigidbody2D>();
     }
 
-    public void SetMoney()
+    private void FixedUpdate()
     {
-        money = Random.Range(10, 50);
+        dirVec = (Player.player.transform.position - this.transform.position).normalized;
+        nextVec = dirVec * speed * Time.deltaTime;
+
+        rigid.MovePosition(rigid.position + nextVec);
+        rigid.velocity = Vector2.zero;
+    }
+
+    public void SetMoney(int money)
+    {
+        this.money = Random.Range((int)(money - money * 0.2f), (int)(money + money * 0.2f));
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

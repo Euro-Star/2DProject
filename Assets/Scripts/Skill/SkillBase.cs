@@ -26,7 +26,10 @@ public class SkillBase : MonoBehaviour
     protected IEnumerator Delay()
     {
         yield return new WaitForSeconds(SkillManager.inst.GetSkillData(skillCode).delay);
+
         collider.enabled = true;
+        Player.player.skillComponent.SetSkillDelay(false);
+        StartCoroutine(DestroySkill());
     }
 
     protected virtual IEnumerator DestroySkill()
@@ -37,12 +40,21 @@ public class SkillBase : MonoBehaviour
 
 
     public virtual void UseSkill(Vector2 target, int playerDamage)
-    {       
-        transform.position = target;
-        this.playerDamage = playerDamage;
+    {
         collider.enabled = false;
+        Player.player.skillComponent.SetSkillDelay(true);
+
+        if (SkillManager.inst.GetSkillType(skillCode) == "Attack")
+        {
+            transform.position = target;
+        }
+        else
+        {
+            transform.position = Player.player.transform.position;
+        }
+
+        this.playerDamage = playerDamage;
 
         StartCoroutine(Delay());
-        StartCoroutine(DestroySkill());
     }
 }

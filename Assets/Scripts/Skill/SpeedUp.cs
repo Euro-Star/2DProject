@@ -30,5 +30,6 @@ public class SpeedUp : SkillBase
         base.UseSkill(target, playerDamage);
 
         Player.player.AttackSpeedUp(SkillManager.inst.GetSkillData(skillCode).skillValue);
+        SoundManager.inst.PlaySound(SoundType.Skill, (int)SkillSound.Skill_4_SpeedUp);
     }
 }

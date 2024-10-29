@@ -9,6 +9,10 @@ TagManager:
   - Wall
   - Manager
   - UI
+  - EnemyProjectile
+  - PlayerHitBox
+  - Boss
+  - TestTag
   layers:
   - Default
   - TransparentFX
@@ -17,8 +21,8 @@ TagManager:
   - Water
   - UI
   - Enemy
-  - 
-  - 
+  - EnemyProjectile
+  - PlayerHitBox
   - 
   - 
   - 

@@ -28,6 +28,8 @@ public class SkillUI : UIBase
 
         content = Get<RectTransform>((int)UIObjects.SkillContent);
         button_Close = Get<Button>((int)Buttons.Button_Close);
+
+        DontDestroyOnLoad(this.gameObject);
     }
 
     private void Start()

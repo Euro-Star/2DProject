@@ -35,3 +35,12 @@ public class LevelData
     public int totalExp;
 }
 
+[Serializable]
+public class StageData
+{
+    public int hp;
+    public int atk;
+    public int exp;
+    public int money;
+    public int openLevel;
+}

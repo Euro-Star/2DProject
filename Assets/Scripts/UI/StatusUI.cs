@@ -41,6 +41,8 @@ public class StatusUI : UIBase
         text_Atk = Get<TextMeshProUGUI>((int)Texts.Text_Atk);
         text_Hp = Get<TextMeshProUGUI>((int)Texts.Text_Hp);
         text_StatPoint = Get<TextMeshProUGUI>((int)Texts.Text_StatPoint);
+
+        DontDestroyOnLoad(this.gameObject);
     }
 
     private void OnEnable()
@@ -76,7 +78,7 @@ public class StatusUI : UIBase
 
     private void UpdateText()
     {
-        text_Atk.text = Player.player.abilityComponent.GetAtk().ToString();
+        text_Atk.text = Player.player.abilityComponent.GetStatAtk().ToString();
         text_Hp.text = Player.player.abilityComponent.GetMaxHp().ToString();
         text_StatPoint.text = Player.player.abilityComponent.GetStatPoint().ToString();
     }
