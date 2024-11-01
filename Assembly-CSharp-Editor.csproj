@@ -60,8 +60,8 @@
     <Analyzer Include="C:\Program Files\2022.3.26f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\SPUM\Script\Editor\SPUM_SpriteEditor.cs" />
-    <Compile Include="Assets\SPUM\Script\Editor\SPUM_Editor.cs" />
+    <Compile Include="Assets\Asset\CharacterTool\Script\Editor\SPUM_SpriteEditor.cs" />
+    <Compile Include="Assets\Asset\CharacterTool\Script\Editor\SPUM_Editor.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -1238,13 +1238,17 @@
       <Project>{9F478B2A-144D-827E-BDBC-CD6D9B431814}</Project>
       <Name>Assembly-CSharp</Name>
     </ProjectReference>
+    <ProjectReference Include="CFXREditor.csproj">
+      <Project>{924CBA76-59C0-CEED-8D06-45E0ABC15DCF}</Project>
+      <Name>CFXREditor</Name>
+    </ProjectReference>
     <ProjectReference Include="ToonyColorsPro.Demo.Editor.csproj">
       <Project>{2BF064DE-1F04-B45C-49F1-812A9875F496}</Project>
       <Name>ToonyColorsPro.Demo.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="CFXRRuntime.csproj">
-      <Project>{FC22806D-D36E-37D2-5105-D5683894B193}</Project>
-      <Name>CFXRRuntime</Name>
+    <ProjectReference Include="KinoBloom.Runtime.csproj">
+      <Project>{57AC7068-0C50-957C-DAB7-A44003529339}</Project>
+      <Name>KinoBloom.Runtime</Name>
     </ProjectReference>
     <ProjectReference Include="CFXRDemo.csproj">
       <Project>{D64ACAA1-17E6-9C11-5EAC-E1E6DCE72D72}</Project>
@@ -1254,13 +1258,9 @@
       <Project>{2A9ACF95-6C22-1B5C-39E0-E5AFD84E4F14}</Project>
       <Name>CFXR.WelcomeScreen</Name>
     </ProjectReference>
-    <ProjectReference Include="KinoBloom.Runtime.csproj">
-      <Project>{57AC7068-0C50-957C-DAB7-A44003529339}</Project>
-      <Name>KinoBloom.Runtime</Name>
-    </ProjectReference>
-    <ProjectReference Include="CFXREditor.csproj">
-      <Project>{924CBA76-59C0-CEED-8D06-45E0ABC15DCF}</Project>
-      <Name>CFXREditor</Name>
+    <ProjectReference Include="CFXRRuntime.csproj">
+      <Project>{FC22806D-D36E-37D2-5105-D5683894B193}</Project>
+      <Name>CFXRRuntime</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

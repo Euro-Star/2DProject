@@ -61,81 +61,87 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\UI\StageUIEntry.cs" />
-    <Compile Include="Assets\Cainos\Pixel Art Top Down - Basic\Script\TopDownCharacterController.cs" />
-    <Compile Include="Assets\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_AutoRotate.cs" />
-    <Compile Include="Assets\Pixel Art Particles Pack\Demo\Scripts\PixelParticles_Demo.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
+    <Compile Include="Assets\Asset\Map\PixelMapTile\Pixel Art Top Down - Basic\Script\TopDownCharacterController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
-    <Compile Include="Assets\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_RandomDirectionTranslate.cs" />
+    <Compile Include="Assets\Asset\Effect\CartoonSkillEffect\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_RandomDir.cs" />
     <Compile Include="Assets\Scripts\UI\GameTestUI.cs" />
+    <Compile Include="Assets\Asset\Map\PixelMapTile\Pixel Art Top Down - Basic\Script\LayerTrigger.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
     <Compile Include="Assets\Scripts\Item\Money.cs" />
     <Compile Include="Assets\Scripts\UI\DeathUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
     <Compile Include="Assets\Scripts\Enemy\WarningSignSquare.cs" />
+    <Compile Include="Assets\Asset\CharacterTool\Script\SPUM_Prefabs.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
     <Compile Include="Assets\Scripts\Manager\CameraManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
-    <Compile Include="Assets\SPUM\Script\SPUM_PreviewItem.cs" />
     <Compile Include="Assets\Scripts\UI\StatusUI.cs" />
     <Compile Include="Assets\Scripts\DataTable\GameJson.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
     <Compile Include="Assets\Scripts\Player\Inventory.cs" />
-    <Compile Include="Assets\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_LightFlicker.cs" />
+    <Compile Include="Assets\Asset\Enemy\SlimeBossAsset\MonsterGirls\MonsterGirlsCommon\Scripts\OverrideSprite.cs" />
     <Compile Include="Assets\Scripts\Skill\HitFire.cs" />
+    <Compile Include="Assets\Asset\Effect\CartoonSkillEffect\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_RandomDirectionTranslate.cs" />
     <Compile Include="Assets\Scripts\Player\GamePad.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
     <Compile Include="Assets\Scripts\Enemy\SlimeBoss\Skill\SlimeBossSkill_3.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
-    <Compile Include="Assets\Pixel Art Particles Pack\Demo\Scripts\PixelParticles_CreateFireballs.cs" />
+    <Compile Include="Assets\Asset\Effect\PixelSkillEffect\Demo\Scripts\PixelParticles_Shoot.cs" />
     <Compile Include="Assets\Scripts\Manager\SoundManager.cs" />
-    <Compile Include="Assets\Cainos\Pixel Art Top Down - Basic\Script\PropsAltar.cs" />
     <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
-    <Compile Include="Assets\Anogame\MonsterGirls\MonsterGirlsCommon\Scripts\DemoPlayChara.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
+    <Compile Include="Assets\Asset\Effect\CartoonSkillEffect\Cartoon FX (legacy)\Scripts\CFX_LightIntensityFade.cs" />
     <Compile Include="Assets\Scripts\Enemy\SlimeBoss\Skill\SlimeBossSkill_1.cs" />
-    <Compile Include="Assets\SPUM\Script\SPUM_Manager.cs" />
+    <Compile Include="Assets\Asset\Map\PixelMapTile\Pixel Art Top Down - Basic\Script\SpriteColorAnimation.cs" />
     <Compile Include="Assets\Scripts\Enemy\SlimeBoss\SlimeBoss.cs" />
+    <Compile Include="Assets\Asset\Effect\PixelSkillEffect\Demo\Scripts\PixelParticles_CreateFireballs.cs" />
     <Compile Include="Assets\Scripts\UI\StartLoading.cs" />
+    <Compile Include="Assets\Asset\Map\PixelMapTile\Pixel Art Top Down - Basic\Script\CameraFollow.cs" />
+    <Compile Include="Assets\Asset\Effect\CartoonSkillEffect\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_RotateCamera.cs" />
     <Compile Include="Assets\Scripts\CustomTool\HierarchyCustom.cs" />
     <Compile Include="Assets\Scripts\UI\SkillUIEntry.cs" />
     <Compile Include="Assets\Scripts\Enemy\SlimeBoss\Skill\SlimeBossSkill_2.cs" />
-    <Compile Include="Assets\Cainos\Pixel Art Top Down - Basic\Script\SpriteColorAnimation.cs" />
+    <Compile Include="Assets\Asset\Effect\PixelSkillEffect\Demo\Scripts\PixelParticles_Demo.cs" />
+    <Compile Include="Assets\Asset\Effect\CartoonSkillEffect\Cartoon FX (legacy)\Scripts\CFX_AutoRotate.cs" />
     <Compile Include="Assets\Scripts\Manager\GameManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Asset\Effect\PixelSkillEffect\Demo\Scripts\PixelParticles_Projectile.cs" />
     <Compile Include="Assets\Scripts\Test\UI_Text.cs" />
     <Compile Include="Assets\Scripts\Component\HealthComponent.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\Scripts\Manager\SkillManager.cs" />
     <Compile Include="Assets\Scripts\Component\DontDestroyComponent.cs" />
-    <Compile Include="Assets\Cainos\Pixel Art Top Down - Basic\Script\LayerTrigger.cs" />
+    <Compile Include="Assets\Asset\Effect\CartoonSkillEffect\Cartoon FX (legacy)\Scripts\CFX_AutoDestructShuriken.cs" />
     <Compile Include="Assets\Scripts\Player\LockOn.cs" />
-    <Compile Include="Assets\Pixel Art Particles Pack\Demo\Scripts\PixelParticles_Shoot.cs" />
-    <Compile Include="Assets\SPUM\Sample\Script\PlayerObj.cs" />
+    <Compile Include="Assets\Asset\CharacterTool\Sample\Script\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\Skill\SpeedUp.cs" />
     <Compile Include="Assets\Scripts\Player\HitBoxComponent.cs" />
     <Compile Include="Assets\Scripts\Player\AbilityComponent.cs" />
-    <Compile Include="Assets\Anogame\MonsterGirls\MonsterGirlsCommon\Scripts\OverrideSprite.cs" />
     <Compile Include="Assets\Scripts\UI\HUD.cs" />
     <Compile Include="Assets\Scripts\Skill\Healing.cs" />
-    <Compile Include="Assets\Anogame\MonsterGirls\MonsterGirlsCommon\Scripts\CharaController.cs" />
+    <Compile Include="Assets\Asset\Effect\CartoonSkillEffect\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_New.cs" />
+    <Compile Include="Assets\Asset\CharacterTool\Sample\Script\PlayerObj.cs" />
     <Compile Include="Assets\Scripts\Manager\GameEnum.cs" />
-    <Compile Include="Assets\Pixel Art Particles Pack\Demo\Scripts\PixelParticles_Projectile.cs" />
     <Compile Include="Assets\Scripts\CustomTool\HierarchyData.cs" />
+    <Compile Include="Assets\Asset\Effect\CartoonSkillEffect\Cartoon FX (legacy)\Scripts\CFX_LightFlicker.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
+    <Compile Include="Assets\Asset\Enemy\SlimeBossAsset\MonsterGirls\MonsterGirlsCommon\Scripts\DemoPlayChara.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
+    <Compile Include="Assets\Asset\Effect\PixelSkillEffect\Demo\Scripts\PixelParticles_Fireballs.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
-    <Compile Include="Assets\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_LightIntensityFade.cs" />
-    <Compile Include="Assets\SPUM\Script\SPUM_SpriteList.cs" />
     <Compile Include="Assets\Scripts\Manager\UIManager.cs" />
-    <Compile Include="Assets\SPUM\Sample\Script\PlayerManager.cs" />
+    <Compile Include="Assets\Asset\CharacterTool\Script\SPUM_PreviewItem.cs" />
     <Compile Include="Assets\Scripts\UI\LobbyUI.cs" />
-    <Compile Include="Assets\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_New.cs" />
+    <Compile Include="Assets\Asset\CharacterTool\Script\SPUM_SpriteList.cs" />
+    <Compile Include="Assets\Asset\Enemy\SlimeBossAsset\MonsterGirls\MonsterGirlsCommon\Scripts\CharaController.cs" />
+    <Compile Include="Assets\Asset\Effect\CartoonSkillEffect\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_Translate.cs" />
+    <Compile Include="Assets\Asset\Effect\CartoonSkillEffect\Cartoon FX (legacy)\Demo\Assets\CFX_AutoStopLoopedEffect.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Scripts\Enemy\SlimeBoss\Skill\IceHitEffect.cs" />
     <Compile Include="Assets\Scripts\Enemy\BossSkillBase.cs" />
@@ -143,15 +149,14 @@
     <Compile Include="Assets\Scripts\Manager\PoolManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
     <Compile Include="Assets\Scripts\UI\FloatingUI.cs" />
-    <Compile Include="Assets\Pixel Art Particles Pack\Demo\Scripts\PixelParticles_Fireballs.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
-    <Compile Include="Assets\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_RandomDir.cs" />
-    <Compile Include="Assets\SPUM\Script\SPUM_Prefabs.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextConsoleSimulator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
     <Compile Include="Assets\Scripts\Player\AutoMode.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
+    <Compile Include="Assets\Asset\Map\PixelMapTile\Pixel Art Top Down - Basic\Script\PropsAltar.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
+    <Compile Include="Assets\Asset\CharacterTool\Script\SPUM_TexutreList.cs" />
     <Compile Include="Assets\Scripts\Component\DefaultAttackComponent.cs" />
     <Compile Include="Assets\Scripts\Enemy\WarningSign.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
@@ -162,58 +167,53 @@
     <Compile Include="Assets\Scripts\Skill\SkillBase.cs" />
     <Compile Include="Assets\Scripts\UI\SkillUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
-    <Compile Include="Assets\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_RotateCamera.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
-    <Compile Include="Assets\JMO Assets\Cartoon FX (legacy)\Scripts\CFX_AutoDestructShuriken.cs" />
-    <Compile Include="Assets\SPUM\Script\SPUM_TexutreList.cs" />
-    <Compile Include="Assets\Cainos\Pixel Art Top Down - Basic\Script\CameraFollow.cs" />
+    <Compile Include="Assets\Asset\CharacterTool\Script\SPUM_Manager.cs" />
     <Compile Include="Assets\Scripts\UI\StageUI.cs" />
-    <Compile Include="Assets\Anogame\MonsterGirls\MonsterGirlsCommon\Scripts\DemoCharaAnimationPlayer.cs" />
+    <Compile Include="Assets\Asset\Enemy\SlimeBossAsset\MonsterGirls\MonsterGirlsCommon\Scripts\DemoCharaAnimationPlayer.cs" />
     <Compile Include="Assets\Scripts\UI\UIBase.cs" />
     <Compile Include="Assets\Scripts\Player\SkillComponent.cs" />
-    <Compile Include="Assets\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_Demo_Translate.cs" />
     <Compile Include="Assets\Scripts\Manager\LoadingSceneManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
-    <Compile Include="Assets\JMO Assets\Cartoon FX (legacy)\Demo\Assets\CFX_AutoStopLoopedEffect.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
-    <None Include="Assets\JMO Assets\Cartoon FX (legacy)\Shaders\CFX3 Multiply Color.shader" />
-    <None Include="Assets\JMO Assets\Cartoon FX Remaster\CFXR Assets\Shaders\CFXR_SETTINGS.cginc" />
+    <None Include="Assets\Asset\Effect\CartoonSkillEffect\Cartoon FX (legacy)\Shaders\CFX3 Multiply Color.shader" />
+    <None Include="Assets\Asset\Effect\CartoonSkillEffect\Cartoon FX Remaster\CFXR Assets\Shaders\CFXR_SETTINGS.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
-    <None Include="Assets\JMO Assets\Cartoon FX (legacy)\CartoonFX Free.txt" />
-    <None Include="Assets\Cainos\Pixel Art Top Down - Basic\Changelog.txt" />
+    <None Include="Assets\Asset\Effect\CartoonSkillEffect\Cartoon FX (legacy)\CartoonFX Free.txt" />
+    <None Include="Assets\Asset\Map\PixelMapTile\Pixel Art Top Down - Basic\Changelog.txt" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Oswald-Bold - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Anton OFL.txt" />
-    <None Include="Assets\JMO Assets\Cartoon FX Remaster\CFXR Assets\Shaders\CFXR.cginc" />
+    <None Include="Assets\Asset\Effect\CartoonSkillEffect\Cartoon FX Remaster\CFXR Assets\Shaders\CFXR.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
-    <None Include="Assets\Cainos\Pixel Art Top Down - Basic\Shader\SH Sprite Shadow.shader" />
+    <None Include="Assets\Asset\Map\PixelMapTile\Pixel Art Top Down - Basic\Shader\SH Sprite Shadow.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
-    <None Include="Assets\Anogame\MonsterGirls\README.txt" />
+    <None Include="Assets\Asset\Enemy\SlimeBossAsset\MonsterGirls\README.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
-    <None Include="Assets\JMO Assets\Cartoon FX Remaster\Readme Cartoon FX Remaster FREE.txt" />
+    <None Include="Assets\Asset\Effect\CartoonSkillEffect\Cartoon FX Remaster\Readme Cartoon FX Remaster FREE.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
-    <None Include="Assets\War\Slime Enemy - Pixel Art\README.txt" />
+    <None Include="Assets\Asset\Enemy\SlimeAsset\Slime Enemy - Pixel Art\README.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
-    <None Include="Assets\SPUM\ReadMe - 1.0.2.txt" />
+    <None Include="Assets\Asset\CharacterTool\ReadMe - 1.0.2.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
-    <None Include="Assets\JMO Assets\Cartoon FX Remaster\CFXR Prefabs\Texts\_Make your own text effect.txt" />
-    <None Include="Assets\JMO Assets\Cartoon FX Remaster\CFXR Assets\Shaders\CFXR_PASSES.cginc" />
+    <None Include="Assets\Asset\Effect\CartoonSkillEffect\Cartoon FX Remaster\CFXR Prefabs\Texts\_Make your own text effect.txt" />
+    <None Include="Assets\Asset\Effect\CartoonSkillEffect\Cartoon FX Remaster\CFXR Assets\Shaders\CFXR_PASSES.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
-    <None Include="Assets\JMO Assets\Cartoon FX (legacy)\Shaders\CFXM_MobileParticleAdd_Alpha8.shader" />
+    <None Include="Assets\Asset\Effect\CartoonSkillEffect\Cartoon FX (legacy)\Shaders\CFXM_MobileParticleAdd_Alpha8.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
-    <None Include="Assets\Cainos\Pixel Art Top Down - Basic\Shader\SH Sprite Shadow Mask.shader" />
+    <None Include="Assets\Asset\Map\PixelMapTile\Pixel Art Top Down - Basic\Shader\SH Sprite Shadow Mask.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
-    <None Include="Assets\JMO Assets\Cartoon FX Remaster\CFXR Assets\Shaders\CFXR_URP.cginc" />
+    <None Include="Assets\Asset\Effect\CartoonSkillEffect\Cartoon FX Remaster\CFXR Assets\Shaders\CFXR_URP.cginc" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
@@ -1322,13 +1322,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="CFXREditor.csproj">
+      <Project>{924CBA76-59C0-CEED-8D06-45E0ABC15DCF}</Project>
+      <Name>CFXREditor</Name>
+    </ProjectReference>
     <ProjectReference Include="ToonyColorsPro.Demo.Editor.csproj">
       <Project>{2BF064DE-1F04-B45C-49F1-812A9875F496}</Project>
       <Name>ToonyColorsPro.Demo.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="CFXRRuntime.csproj">
-      <Project>{FC22806D-D36E-37D2-5105-D5683894B193}</Project>
-      <Name>CFXRRuntime</Name>
+    <ProjectReference Include="KinoBloom.Runtime.csproj">
+      <Project>{57AC7068-0C50-957C-DAB7-A44003529339}</Project>
+      <Name>KinoBloom.Runtime</Name>
     </ProjectReference>
     <ProjectReference Include="CFXRDemo.csproj">
       <Project>{D64ACAA1-17E6-9C11-5EAC-E1E6DCE72D72}</Project>
@@ -1338,13 +1342,9 @@
       <Project>{2A9ACF95-6C22-1B5C-39E0-E5AFD84E4F14}</Project>
       <Name>CFXR.WelcomeScreen</Name>
     </ProjectReference>
-    <ProjectReference Include="KinoBloom.Runtime.csproj">
-      <Project>{57AC7068-0C50-957C-DAB7-A44003529339}</Project>
-      <Name>KinoBloom.Runtime</Name>
-    </ProjectReference>
-    <ProjectReference Include="CFXREditor.csproj">
-      <Project>{924CBA76-59C0-CEED-8D06-45E0ABC15DCF}</Project>
-      <Name>CFXREditor</Name>
+    <ProjectReference Include="CFXRRuntime.csproj">
+      <Project>{FC22806D-D36E-37D2-5105-D5683894B193}</Project>
+      <Name>CFXRRuntime</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
