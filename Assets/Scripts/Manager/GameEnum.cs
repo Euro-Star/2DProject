@@ -29,7 +29,8 @@ public enum GameUI
     SkillUI,
     StageUI,
     DeathUI,
-    GameTestUI
+    GameTestUI,
+    SignInUI
 }
 
 public enum SkillEnum

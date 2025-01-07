@@ -22,6 +22,9 @@ public class UIManager : MonoBehaviour
     private GameObject deathUI;
     private GameObject gameTestUI;
 
+    //* 로그인 UI 예외*//
+    [SerializeField] private GameObject SignInUI;
+
     private void Awake()
     {
         instance = this;
@@ -93,6 +96,11 @@ public class UIManager : MonoBehaviour
             case GameUI.GameTestUI:
                 {
                     gameTestUI.SetActive(bOpen);
+                    break;
+                }
+            case GameUI.SignInUI:
+                {
+                    SignInUI.SetActive(bOpen);
                     break;
                 }
             default:

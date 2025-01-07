@@ -8,6 +8,7 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  importerVersion: 1
   textureImporterSettings:
     alphaSource: 1
     mipMapMode: 0
@@ -144,7 +145,7 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 841828232
+    guid: -592900184
     name: ui option button pack
     layerFlags: 0
     layerType: 0
@@ -152,6 +153,7 @@ ScriptedImporter:
     cells:
     - name: ui option button pack
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 15
         y: 19
@@ -165,3 +167,4 @@ ScriptedImporter:
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 128, y: 128}
+  previousTextureSize: {x: 128, y: 128}

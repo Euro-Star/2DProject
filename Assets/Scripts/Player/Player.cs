@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
     public Vector2 inputVec;
     public float speed;
     public GameObject defaultAttackSpawnPoint;
+    public event EventHandler playerDataChangeEvent;
 
     // 플레이어가 사용중인 컴포넌트
     public LockOn lockOn;
@@ -52,6 +53,11 @@ public class Player : MonoBehaviour
     public float GetSpeed() { return speed; }
     public bool IsDeath() { return bDeath; }
     public void SetDeath(bool bDeath) { this.bDeath = bDeath; }
+    public void SetPlayerData(PlayerData playerData) 
+    { 
+        this.playerData = playerData;
+        LoadPlayerData();
+    }
     
 
     private void Awake()
@@ -61,7 +67,7 @@ public class Player : MonoBehaviour
             instance = this;
         }
 
-        playerData = Utils.JsonDataParse<PlayerData>("PlayerData");
+        playerData = new PlayerData();
 
         lockOn = GetComponent<LockOn>();
         autoMode = GetComponent<AutoMode>();
@@ -88,8 +94,6 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        LoadPlayerData();
-
         SceneManager.sceneLoaded += LoadSceneEvent;
         healthComponent.DeathEvent += Death;
     }
@@ -163,6 +167,8 @@ public class Player : MonoBehaviour
         healthComponent.InitHealth(playerData.hp);
         inventory.InitInventory(playerData);
         SkillManager.inst.InitSkillLevel(playerData.skillLevel);
+
+        playerDataChangeEvent?.Invoke(this, EventArgs.Empty);
     }
 
     public void SavePlayerData()

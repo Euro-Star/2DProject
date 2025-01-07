@@ -139,8 +139,6 @@ public class HUD : UIBase
 
     private void Start()
     {
-        InitHUD();
-
         Player.player.abilityComponent.ExpChangeEvent += UpdateExp;
         Player.player.abilityComponent.LevelChangeEvent += UpdateLevel;
         Player.player.healthComponent.HpChangeEvent += UpdateHp;
@@ -158,6 +156,7 @@ public class HUD : UIBase
         button_Auto.onClick.AddListener(OnClicked_Auto);
 
         SceneManager.sceneLoaded += LoadSceneEvent;
+        Player.player.playerDataChangeEvent += InitHUD;
 
         // 테스트 버튼
         testButton.onClick.AddListener(TestFunc);
@@ -168,7 +167,7 @@ public class HUD : UIBase
     }
 
 
-    private void InitHUD()
+    private void InitHUD(object sender, EventArgs eventArgs)
     {
         UpdateExp(null, null);
         UpdateLevel(null, null);

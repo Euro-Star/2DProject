@@ -76,6 +76,8 @@ public class AbilityComponent : MonoBehaviour
         }
 
         ExpChangeEvent?.Invoke(this, EventArgs.Empty);
+
+        ServerManager.inst.UpdateExp(this.exp);
     }
 
     public void LevelUp()
@@ -86,6 +88,10 @@ public class AbilityComponent : MonoBehaviour
         Player.player.healthComponent.MaxHeal();
 
         LevelChangeEvent?.Invoke(this, EventArgs.Empty);
+
+        ServerManager.inst.UpdateExp(exp);
+        ServerManager.inst.UpdateLevel(level);
+        ServerManager.inst.UpdateStatPoint(statPoint);
     }
 
     public void IncreaseAtk()
@@ -97,6 +103,9 @@ public class AbilityComponent : MonoBehaviour
         {
             --statPoint;
             ++atk;
+
+            ServerManager.inst.UpdateAtk(atk);
+            ServerManager.inst.UpdateStatPoint(statPoint);
         }
     }
 
@@ -107,7 +116,10 @@ public class AbilityComponent : MonoBehaviour
         if (statPoint > 0)
         {
             --statPoint;
+
             Player.player.healthComponent.IncreaseHp();
+            ServerManager.inst.UpdateHp(GetMaxHp());
+            ServerManager.inst.UpdateStatPoint(statPoint);
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using GameUtils;
 using Unity.VisualScripting;
+using System.Linq;
 
 public class SkillManager : MonoBehaviour
 {
@@ -22,8 +23,9 @@ public class SkillManager : MonoBehaviour
     {
         instance = this;
         skillData = new List<Dictionary<int, SkillData>>();
+        skillLevel = Enumerable.Range(1, skillPrefabs.Length).ToArray();
 
-        for(int i = 0; i< skillPrefabs.Length; i++) 
+        for (int i = 0; i< skillPrefabs.Length; i++) 
         {
             skillData.Add(Utils.JsonToDictionary<int, SkillData>(SkillIndexToName(i)));
         }
@@ -83,7 +85,9 @@ public class SkillManager : MonoBehaviour
 
     public void SkillLevelUp(int index)
     {
-        ++skillLevel[index]; 
+        ++skillLevel[index];
+        
+        ServerManager.inst.UpdateSkillLevel(index, skillLevel[index]);
     }
 
     public void InitSkillLevel(int[] skillLevel)
