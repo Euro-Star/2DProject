@@ -37,7 +37,7 @@ public class StageUIEntry : UIBase
 
     private void OnEnable()
     {
-        LockStage();
+        //LockStage();
     }
 
     private void Start()
@@ -57,7 +57,7 @@ public class StageUIEntry : UIBase
         text_Stage.text = stageText;
         this.openLevel = openLevel;
 
-        LockStage();
+        //LockStage();
     }
 
     private void LockStage()

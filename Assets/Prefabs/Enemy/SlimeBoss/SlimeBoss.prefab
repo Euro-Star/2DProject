@@ -109,10 +109,10 @@ GameObject:
   - component: {fileID: 4263283348601510493}
   - component: {fileID: 7892677419075261732}
   - component: {fileID: 5203467521212378253}
-  - component: {fileID: -8215945574097936677}
   - component: {fileID: 8298105523789863153}
   - component: {fileID: 1105009089980438352}
   - component: {fileID: 6082677124876929772}
+  - component: {fileID: 6947443243465831459}
   m_Layer: 0
   m_Name: SlimeBoss
   m_TagString: Boss
@@ -169,9 +169,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86d9d6b61c6c1a14982fb768df4970b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetRigid: {fileID: 0}
-  speed: 0
-  knockBackForce: 0
   healthComponent: {fileID: 0}
   skill_Prefabs:
   - {fileID: 1287441867238537690, guid: 41353c0912df8e0478cdc445743f8afd, type: 3}
@@ -179,19 +176,6 @@ MonoBehaviour:
   - {fileID: 6625952836310191311, guid: c708fda3b8a7e9942b3f770814309757, type: 3}
   warningSign_Prefab: {fileID: 1516678770417587544, guid: 46eb0cd0c5c922842a95c410794c30a8, type: 3}
   warningSignSquare_Prefab: {fileID: 272053002055887247, guid: 47044d3376107fb45b3f8f82ab8ac392, type: 3}
---- !u!114 &-8215945574097936677
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4093480002504450439}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4509f9e3cda54164793dc8c43b653332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textDamagePrefab: {fileID: 3276363928405576412, guid: 171bccc35d956834cb65081f2f3fe837, type: 3}
 --- !u!114 &8298105523789863153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,3 +250,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &6947443243465831459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4093480002504450439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 889ab23b18cc31a46a718614870b86e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textDamagePrefab: {fileID: 3276363928405576412, guid: 171bccc35d956834cb65081f2f3fe837, type: 3}

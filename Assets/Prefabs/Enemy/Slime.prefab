@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 4692672516448885347}
   - component: {fileID: 2215659855469583638}
   - component: {fileID: 601539854747207295}
-  - component: {fileID: 2118050352714559337}
   - component: {fileID: -736802763546208358}
   - component: {fileID: 4125765186455782905}
   - component: {fileID: 4412657883360477160}
+  - component: {fileID: 7298388281776901429}
   m_Layer: 6
   m_Name: Slime
   m_TagString: Enemy
@@ -126,24 +126,8 @@ MonoBehaviour:
   targetRigid: {fileID: 0}
   speed: 2
   knockBackForce: 1.5
-  healthComponent: {fileID: 2118050352714559337}
-  isSlimeColorGreen: 0
-  isSlimeColorBlue: 1
-  isSlimeColorRed: 0
+  healthComponent: {fileID: 0}
   SlimeAnimState: 0
---- !u!114 &2118050352714559337
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6666101254503075492}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4509f9e3cda54164793dc8c43b653332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textDamagePrefab: {fileID: 3276363928405576412, guid: 171bccc35d956834cb65081f2f3fe837, type: 3}
 --- !u!50 &-736802763546208358
 Rigidbody2D:
   serializedVersion: 4
@@ -218,3 +202,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ca9ba5378738ce43b0c2f5708c3bd38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7298388281776901429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6666101254503075492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 889ab23b18cc31a46a718614870b86e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textDamagePrefab: {fileID: 3276363928405576412, guid: 171bccc35d956834cb65081f2f3fe837, type: 3}

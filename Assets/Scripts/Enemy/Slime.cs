@@ -41,7 +41,7 @@ public class Slime : Enemy
     protected override void Start()
     {
         base.Start();
-        attackedEvent += Hurt;
+        healthComponent.AttackedEvent += Hurt;
         healthComponent.DeathEvent += DeathAnim;
     }
 

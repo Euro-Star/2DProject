@@ -8,7 +8,7 @@ using Unity.VisualScripting;
 public class HitBoxComponent : MonoBehaviour
 {
     [SerializeField]
-    HealthComponent healthComponent;
+    HealthComponentPlayer healthComponent;
 
     private bool bHitCooltime;
 
@@ -24,6 +24,7 @@ public class HitBoxComponent : MonoBehaviour
             if(!bHitCooltime)
             {
                 Enemy enemy = collision.GetComponent<Enemy>();
+
                 healthComponent.HitDamage(enemy.GetAtk());
                 bHitCooltime = true;
                 StartCoroutine(HitCooltime());
@@ -42,7 +43,7 @@ public class HitBoxComponent : MonoBehaviour
         bHitCooltime = false;
     }
 
-    public HealthComponent GetHealthComponent()
+    public HealthComponentPlayer GetHealthComponent()
     {
         return healthComponent;
     }

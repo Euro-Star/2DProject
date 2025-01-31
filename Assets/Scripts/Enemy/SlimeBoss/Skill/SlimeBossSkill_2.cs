@@ -26,7 +26,8 @@ public class SlimeBossSkill_2 : MonoBehaviour
             if (Utils.StringToEnum<GameTag>(collision.tag) == GameTag.PlayerHitBox)
             {
                 HitBoxComponent hitBox = collision.GetComponent<HitBoxComponent>();
-                hitBox.GetHealthComponent().HitDamage(damage);
+                IHealth healthComp = hitBox.GetHealthComponent();
+                healthComp.HitDamage(damage);
 
                 bHit = true;
             }

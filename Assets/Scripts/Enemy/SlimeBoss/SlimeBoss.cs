@@ -7,7 +7,7 @@ using static UnityEngine.GraphicsBuffer;
 using GameUtils;
 using UnityEngine.SceneManagement;
 
-public class SlimeBoss : Enemy
+public class SlimeBoss : Boss
 {
     [SerializeField] private GameObject[] skill_Prefabs;
     [SerializeField] private GameObject warningSign_Prefab;
@@ -33,7 +33,6 @@ public class SlimeBoss : Enemy
         arr = new int[3];
         skill_3_Angle = new Queue<float>();
 
-
         for (int i = 0;i < targetPositions.Length; ++i)
         {
             targetPositions[i] = new Queue<Vector3>();
@@ -45,13 +44,8 @@ public class SlimeBoss : Enemy
     {
         base.Start();
 
-        attackedEvent += Hurt;
+        healthComponent.AttackedEvent += Hurt;
         healthComponent.DeathEvent += PlayingForThk;
-    }
-
-    protected override void OnEnable()
-    {
-        base.OnEnable();
     }
 
     private void Update()
@@ -63,11 +57,6 @@ public class SlimeBoss : Enemy
             UseRandomSkill();
             t = 0f;
         }
-    }
-
-    protected override void FixedUpdate()
-    {
-        //None
     }
 
     private void UseRandomSkill()

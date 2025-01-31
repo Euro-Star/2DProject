@@ -30,15 +30,13 @@ public class FireWall : SkillBase
         currentTime += Time.deltaTime;
 
         if(currentTime >= SkillManager.inst.GetSkillData(skillCode).damageOverTime)
-        {
-            if (Utils.StringToEnum<GameTag>(collision.tag) == GameTag.Enemy || Utils.StringToEnum<GameTag>(collision.tag) == GameTag.Boss)
+        {           
+            IEnemy enemy = collision.GetComponent<IEnemy>();
+            if(enemy != null)
             {
-                Enemy enemy = collision.GetComponent<Enemy>();
-
                 enemy.Attacked((int)Math.Floor(playerDamage * SkillManager.inst.GetSkillData(skillCode).skillValue));
-                enemy.KnockBack();
             }
-
+            
             currentTime = 0f;
         }   
     }

@@ -161,11 +161,11 @@ public class HUD : UIBase
         // 테스트 버튼
         testButton.onClick.AddListener(TestFunc);
     }
+
     private void LoadSceneEvent(Scene scene, LoadSceneMode mode)
     {
         bar_BossHp.gameObject.SetActive(false);
     }
-
 
     private void InitHUD(object sender, EventArgs eventArgs)
     {

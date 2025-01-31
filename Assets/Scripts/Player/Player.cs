@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
     public Inventory inventory;
     public AbilityComponent abilityComponent;
     public SkillComponent skillComponent;
-    public HealthComponent healthComponent;
+    public HealthComponentPlayer healthComponent;
 
     private Rigidbody2D rigidBody;
     private SpriteRenderer spriteRenderer;
@@ -58,6 +58,11 @@ public class Player : MonoBehaviour
         this.playerData = playerData;
         LoadPlayerData();
     }
+    public void TestPlayerData()
+    {
+        this.playerData = new PlayerData();
+        LoadPlayerData();
+    }
     
 
     private void Awake()
@@ -72,7 +77,7 @@ public class Player : MonoBehaviour
         lockOn = GetComponent<LockOn>();
         autoMode = GetComponent<AutoMode>();
         inventory = GetComponent<Inventory>();
-        healthComponent = GetComponent<HealthComponent>();
+        healthComponent = GetComponent<HealthComponentPlayer>();
         abilityComponent = GetComponent<AbilityComponent>();
         skillComponent = GetComponent<SkillComponent>();
 
@@ -94,6 +99,9 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        //테스트 함수(빌드 시 꼭 지우기)
+        TestPlayerData();
+
         SceneManager.sceneLoaded += LoadSceneEvent;
         healthComponent.DeathEvent += Death;
     }

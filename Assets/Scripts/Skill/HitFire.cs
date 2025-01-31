@@ -30,13 +30,11 @@ public class HitFire : SkillBase
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (Utils.StringToEnum<GameTag>(collision.tag) == GameTag.Enemy || Utils.StringToEnum<GameTag>(collision.tag) == GameTag.Boss)
+    {       
+        IEnemy enemy = collision.GetComponent<IEnemy>();
+        if(enemy != null) 
         {
-            Enemy enemy = collision.GetComponent<Enemy>();
-
             enemy.Attacked((int)Math.Floor(playerDamage * SkillManager.inst.GetSkillData(skillCode).skillValue));
-            enemy.KnockBack();
-        }
+        }       
     }  
 }
